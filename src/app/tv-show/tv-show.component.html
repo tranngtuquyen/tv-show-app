@@ -1,1 +1,14 @@
-<p>tv-show works!</p>
+<div>
+  <div>
+    <span>{{ show.name }}, {{ show.language }}</span>
+    <br />
+    <span>{{ show.network }}</span>
+  </div>
+  <div>
+    <img [src]="show.image" />
+    <span>{{ show.genres}} </span>
+  </div>
+  <div>
+    {{ show.description  }}
+  </div>
+</div>

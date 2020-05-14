@@ -23,9 +23,9 @@ interface IShowData {
    time: string,
    days: string[]
  },
- _embedded:{ 
+ _embedded:{
   seasons: Array<{id: number}>,
- 
+
   cast: Array<{ person: { name: string }}>
  }
  }
@@ -35,9 +35,10 @@ interface IShowData {
 })
 export class TvshowService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpclient: HttpClient) { }
+  
   getTvShow(id : number) {
-    return this.http.get<IShowData>(
+    return this.httpclient.get<IShowData>(
       `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.
         transformToIShows(data))
       )
@@ -56,10 +57,10 @@ export class TvshowService {
     days: data.schedule.days,
     year: data.premiered,
     seasons: this.transformToSeasons(data._embedded.seasons),
-    cast: this.transformToCast(data._embedded.cast)  
+    cast: this.transformToCast(data._embedded.cast)
    }
   }
-  
+
   transformToCast(data: Array<{person: {name: string}}>): string[] {
     return  data.map(value=> value.person.name);
   }
@@ -69,7 +70,7 @@ export class TvshowService {
   }
 
 
-  
+
 
 
 

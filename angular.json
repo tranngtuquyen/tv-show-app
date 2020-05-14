@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tv-show-app"
+    }
+  },
+  "defaultProject": "tv-show-app",
+  "cli": {
+    "analytics": "9861a6ff-d9cb-457e-a41e-a15dfad22e4a"
+  }
 }

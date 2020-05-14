@@ -6,15 +6,16 @@ export interface IShow {
     rating: number;
     language: string;
     genres: string[];
-    seasons: ISeason[];
+    seasons: number;
     cast: string[];
-    year: Date;
+    // year: Date;
+    year: string
     network: string;
     time: string;
     days: string[];
 }
 
-export interface ISeason {
-    id: number;
-    name: string;
-}
+// export interface ISeason {
+//     id: number;
+//     name: string;
+// }

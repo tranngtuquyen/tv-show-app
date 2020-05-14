@@ -63,7 +63,7 @@ export class TvshowService {
     days: data.schedule.days,
     year: data.premiered,
     seasons: data._embedded.seasons[0].id,
-    cast: this.transformToCast(data._embedded.cast)  //[data._embedded.cast[0].person.name, data._embedded.cast[1].person.name]
+    cast: this.transformToCast(data._embedded.cast)  
    }
   }
   
@@ -79,15 +79,6 @@ export class TvshowService {
 
 }
 
-
-//  getGenresWhile(genres) {
-//   let str = '';
-//    for(let j=0; j < genres.length-1; j++) {
-//      str = genres[j] +',';
-//    }
-//    str = str.substring(0,str.length - 1);
-        
-//    }
   
 
 

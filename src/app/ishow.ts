@@ -15,7 +15,4 @@ export interface IShow {
     days: string[];
 }
 
-// export interface ISeason {
-//     id: number;
-//     name: string;
-// }
+

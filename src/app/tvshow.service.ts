@@ -23,12 +23,10 @@ interface IShowData {
    time: string,
    days: string[]
  },
- _embedded:{
-   seasons:[ {
-   id: number
-    }],
+ _embedded:{ 
+  seasons: Array<{id: number}>,
  
-  cast: [{ person: { name: string }}]
+  cast: Array<{ person: { name: string }}>
  }
  }
 
@@ -52,32 +50,24 @@ export class TvshowService {
     image: data.image.medium,
     rating: data.rating.average,
     language: data.language,
-    // genres: [ 
-    //   data.genres[0], 
-    //   data.genres[1], 
-    //   data.genres[3]
-    // ],  //Some TV show doesn't have 3 values for genres
-    genres: this.getGenres(data.genres),
+    genres: data.genres,
     network: data.network,
     time: data.schedule.time,
     days: data.schedule.days,
     year: data.premiered,
-    seasons: data._embedded.seasons[0].id,
+    seasons: this.transformToSeasons(data._embedded.seasons),
     cast: this.transformToCast(data._embedded.cast)  
    }
   }
   
   transformToCast(data: Array<{person: {name: string}}>): string[] {
-    return  data.map(d=> d.person.name);
+    return  data.map(value=> value.person.name);
   }
-   
-  
-  //Returns all the items in the genres[]
-  getGenres(genres)  {
-    return genres ? genres.join(', ') : ''
+  transformToSeasons(data: Array<{id: number}>): number[] {
+  return data.map(value=> value.id);
+    }
   }
 
-}
 
   
 

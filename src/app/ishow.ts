@@ -6,7 +6,7 @@ export interface IShow {
     rating: number;
     language: string;
     genres: string[];
-    seasons: number;
+    seasons: number[];
     cast: string[];
     // year: Date;
     year: string

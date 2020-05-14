@@ -18,7 +18,9 @@ interface IShowData {
  premiered: string,
  language: string,
  genres: string[],
- network: string,
+ network: {
+   name: string
+ },
  schedule: {
    time: string,
    days: string[]
@@ -36,7 +38,7 @@ interface IShowData {
 export class TvshowService {
 
   constructor(private httpclient: HttpClient) { }
-  
+
   getTvShow(id : number) {
     return this.httpclient.get<IShowData>(
       `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.
@@ -52,7 +54,7 @@ export class TvshowService {
     rating: data.rating.average,
     language: data.language,
     genres: data.genres,
-    network: data.network,
+    network: data.network.name,
     time: data.schedule.time,
     days: data.schedule.days,
     year: data.premiered,

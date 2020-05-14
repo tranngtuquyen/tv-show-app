@@ -1,14 +1,16 @@
 <div>
   <div>
-    <span>{{ show.name }}, {{ show.language }}</span>
+    <span>{{ show.name }} </span>
+    <br/>
+      <span> {{ show.language }}</span>
     <br />
     <span>{{ show.network }}</span>
   </div>
   <div>
     <img [src]="show.image" />
+    <br/>
     <span>{{ show.genres}} </span>
   </div>
-  <div>
-    {{ show.description  }}
-  </div>
+  <div [innerHtml]=" show.description " ></div>
+
 </div>

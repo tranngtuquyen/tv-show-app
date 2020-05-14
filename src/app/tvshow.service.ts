@@ -38,7 +38,7 @@ interface IShowData {
 export class TvshowService {
 
   constructor(private httpclient: HttpClient) { }
-  
+
   getTvShow(id : number) {
     return this.httpclient.get<IShowData>(
       `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.

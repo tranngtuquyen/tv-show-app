@@ -6,9 +6,9 @@
   </div>
   <div>
     <img [src]="show.image" />
+    <br/>
     <span>{{ show.genres}} </span>
   </div>
-  <div>
-    {{ show.description  }}
-  </div>
+  <div [innerHTML]="show.description"></div>
+
 </div>

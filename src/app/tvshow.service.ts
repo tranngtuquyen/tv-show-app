@@ -18,7 +18,9 @@ interface IShowData {
  premiered: string,
  language: string,
  genres: string[],
- network: string,
+ network: {
+   name: string
+ },
  schedule: {
    time: string,
    days: string[]
@@ -52,7 +54,7 @@ export class TvshowService {
     rating: data.rating.average,
     language: data.language,
     genres: data.genres,
-    network: data.network,
+    network: data.network.name,
     time: data.schedule.time,
     days: data.schedule.days,
     year: data.premiered,

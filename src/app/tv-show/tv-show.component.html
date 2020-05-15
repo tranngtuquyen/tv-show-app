@@ -1,16 +1,35 @@
-<div>
-  <div>
-    <span>{{ show.name }} </span>
-    <br/>
+<div >
+  <div class =title >N FILM </div>
+  <div class =name >{{ show.name }} </div>
+  <div class= p >
+     <span> {{  show.year.substr(0,4) }}</span>
       <span> {{ show.language }}</span>
-    <br />
-    <span>{{ show.network }}</span>
+      <span> Seasons {{ show.seasons }}</span>
   </div>
-  <div>
-    <img [src]="show.image" />
+
+
+  <div class= content>
+      <img [src]="show.image" height="500" />
+  </div>
+  <div id="desc">
     <br/>
-    <span>{{ show.genres}} </span>
-  </div>
-  <div [innerHtml]=" show.description " ></div>
+      <span  [innerHtml]=" show.description " >
+
+      </span>
+ </div>
+
+    <div class=details>
+      <br/>
+      <span>Starring : {{show.cast.slice(0,3)}}</span>
+      <br/>
+      <span>Genres : {{ show.genres}} </span>
+      <br/>
+      <span>Rating : {{show.rating }}</span>
+    </div>
+
+
+
+
+
 
 </div>

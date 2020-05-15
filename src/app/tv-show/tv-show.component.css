@@ -1,0 +1,34 @@
+.title{
+  color: #DB202C;
+  font-size: 30px;
+  font-family: sans-serif;
+}
+.name{
+  text-orientation: initial;
+  font-weight:bold;
+  font-size: 100px;
+  font-family: Candara;
+  font-variant-caps:petite-caps ;
+  color: white;
+}
+.p{
+  font-size: 20px;
+  color: white;
+}
+.content{
+  float: right;
+  width: 700px;
+}
+#desc{
+
+  font-size: 30px ;
+  color: #AAA7A7;
+  text-align: left;
+  font-family:Microsoft sans-serif;
+  margin: 5px;
+
+}
+.details{
+  color: #B1AEAE;
+  font-size: 20px ;
+}

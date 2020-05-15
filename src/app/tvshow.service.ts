@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { IShow } from './ishow';
+import { IShow, IEpisode } from './ishow';
 import { map } from 'rxjs/operators';
 
 
@@ -30,6 +30,18 @@ interface IShowData {
 
   cast: Array<{ person: { name: string }}>
  }
+ }
+
+ interface IEpisodeData {
+  id: number;
+  name: string;
+  number: number | null;
+  image: {
+    medium: string,
+    original: string
+  };
+  summary: string;
+  season: number
  }
 
 @Injectable({
@@ -69,8 +81,29 @@ export class TvshowService {
   transformToSeasons(data: Array<{id: number}>): number[] {
   return data.map(value=> value.id);
     }
+  
+  transformToIEpisode(data: IEpisodeData) : IEpisode {
+    return ({
+      id: data.id,
+      name: data.name,
+      season: data.season,
+      episode: data.number,
+      image: data.image? data.image.medium: '',
+      description: data.summary
+    });
+  }
+  
+  transfromToIEpisodeList(data: IEpisodeData[]): IEpisode[] {
+    return data.map(d => this.transformToIEpisode(d));
   }
 
+  //Get list of IEpisode from API by season ID
+  getIEpisodeList(seasonId: number) {
+    const url = `http://api.tvmaze.com/seasons/${seasonId}/episodes`;
+    return this.httpclient.get<IEpisodeData[]>(url)
+    .pipe(map(data => this.transfromToIEpisodeList(data)))
+  }
+}
 
 
 

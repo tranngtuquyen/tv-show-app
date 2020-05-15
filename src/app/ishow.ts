@@ -15,4 +15,11 @@ export interface IShow {
     days: string[];
 }
 
-
+export interface IEpisode {
+    id: number;
+    name: string;
+    season: number;
+    episode: number;
+    image: string;
+    description: string;
+}

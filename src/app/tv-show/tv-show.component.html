@@ -10,7 +10,7 @@
 
 
   <div class= content>
-      <img [src]="show.image" height="500" />
+      <img [src]="show.image" height="400" />
   </div>
   <div id="desc">
     <br/>
@@ -19,30 +19,28 @@
       </span>
  </div>
 
-    <div class=details>
+  <div class=details>
       <br/>
       <span>Starring : {{show.cast.slice(0,3)}}</span>
       <br/>
       <span>Genres : {{ show.genres}} </span>
       <br/>
       <span>Rating : {{show.rating }}</span>
-    </div>
 
-    <div class=details>
-      <span *ngFor="let season of show.seasons; index as i">
-        <button>Season {{i + 1}}</button>
-      </span>
-    </div>
-
-    <div>
-      <div *ngFor="let episode of episodeList">
-          <div>
-              <a><img [src]='episode.image' /></a>
-          </div>
-          <div>
-              <span id="desc"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
-              <span [innerHtml]="episode.description" class=details></span>
-          </div>
-      </div>
   </div>
+  <br/>
+  <div>
+   <select class="box" >
+      <option  *ngFor="let season of show.seasons;index as i" >  Season {{ i+1 }}</option>
+   </select>
+  </div>
+    <br/>
+    <div class="container">
+        <div  *ngFor="let episode of episodeList">
+          <img [src]='episode.image' />
+          <br/>
+          <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
+          <span id="epicontent" [innerHtml]="episode.description"></span>
+        </div>
+    </div>
 </div>

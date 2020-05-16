@@ -10,7 +10,7 @@ import { TvshowService } from '../tvshow.service';
 export class TvShowComponent implements OnInit {
   show: IShow;
   episodeList: IEpisode[];
-  
+
   constructor(private tvshowservice:TvshowService) { }
 
   ngOnInit(): void {

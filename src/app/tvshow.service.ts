@@ -26,11 +26,23 @@ interface IShowData {
    days: string[]
  },
  _embedded:{
-  seasons: Array<{id: number}>,
+    seasons:[
+      {
+     id : number
+      }
+   ],
 
-  cast: Array<{ person: { name: string }}>
+
+    cast: [
+      {
+      person: {
+         name: string
+        }
+      }
+    ]
  }
- }
+}
+
 
  interface IEpisodeData {
   id: number;
@@ -78,10 +90,10 @@ export class TvshowService {
   transformToCast(data: Array<{person: {name: string}}>): string[] {
     return  data.map(value=> value.person.name);
   }
-  transformToSeasons(data: Array<{id: number}>): number[] {
-  return data.map(value=> value.id);
+  transformToSeasons(data: [{ id: number }]): number[] {
+      return data.map(value=> value.id);
     }
-  
+
   transformToIEpisode(data: IEpisodeData) : IEpisode {
     return ({
       id: data.id,
@@ -92,7 +104,7 @@ export class TvshowService {
       description: data.summary
     });
   }
-  
+
   transfromToIEpisodeList(data: IEpisodeData[]): IEpisode[] {
     return data.map(d => this.transformToIEpisode(d));
   }

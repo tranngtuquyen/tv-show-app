@@ -13,6 +13,7 @@ export interface IShow {
     network: string;
     time: string;
     days: string[];
+  
 }
 
 export interface IEpisode {

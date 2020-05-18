@@ -75,15 +75,15 @@ export class TvshowService {
     name: data.name,
     description: data.summary,
     image: data.image.medium,
-    rating: data.rating.average,
+    rating: data.rating ? data.rating.average : null,
     language: data.language,
     genres: data.genres,
-    network: data.network.name,
+    network: data.network? data.network.name : null,
     time: data.schedule.time,
     days: data.schedule.days,
     year: data.premiered,
-    seasons: this.transformToSeasons(data._embedded.seasons),
-    cast: this.transformToCast(data._embedded.cast)
+    seasons: data._embedded? this.transformToSeasons(data._embedded.seasons) : null,
+    cast: data._embedded? this.transformToCast(data._embedded.cast) : null
    }
   }
 
@@ -114,6 +114,12 @@ export class TvshowService {
     const url = `http://api.tvmaze.com/seasons/${seasonId}/episodes`;
     return this.httpclient.get<IEpisodeData[]>(url)
     .pipe(map(data => this.transfromToIEpisodeList(data)))
+  }
+
+  getAllShows() {
+    const url = `http://api.tvmaze.com/shows`;
+    return this.httpclient.get<IShowData[]>(url)
+    .pipe(map(data => data.map(d => this.transformToIShows(d))))
   }
 }
 

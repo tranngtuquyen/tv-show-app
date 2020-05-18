@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TvShowComponent
+    TvShowComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

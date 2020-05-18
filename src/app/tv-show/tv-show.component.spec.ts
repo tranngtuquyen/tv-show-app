@@ -3,8 +3,6 @@ import { TvShowComponent } from './tv-show.component';
 import { TvshowService } from '../tvshow.service';
 import { TvshowServiceFake } from '../tvshow.service.fake';
 
-
-
 describe('TvShowComponent', () => {
   let component: TvShowComponent;
   let fixture: ComponentFixture<TvShowComponent>;

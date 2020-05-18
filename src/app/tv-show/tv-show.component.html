@@ -1,21 +1,25 @@
-<div >
+<mat-toolbar>
   <div class =title >N FILM </div>
+</mat-toolbar>
+<div style="margin: 15px">
   <div class =name >{{ show.name }} </div>
   <div class= p >
      <span> {{  show.year.substr(0,4) }}</span>
       <span> {{ show.language }}</span>
   </div>
+  <div fxLayout="row" fxFlexAlign="space-around space-around">
+    <div fxFlex></div>
+    <div id="desc" fxFlex="60%">
+      <div fxFlex="90%">
+        <span  [innerHtml]=" show.description " ></span>
+      </div>
+    </div>
 
-
-  <div class= content>
+    <div class= content fxFlex="40%">
       <img [src]="show.image" height="400" />
+    </div>
   </div>
-  <div id="desc">
-    <br/>
-      <span  [innerHtml]=" show.description " >
-
-      </span>
- </div>
+  
 
   <div class=details>
       <br/>
@@ -34,11 +38,12 @@
   </div>
     <br/>
     <div class="container">
-        <div  *ngFor="let episode of episodeList">
-          <img [src]='episode.image' />
-          <br/>
+      <div  *ngFor="let episode of episodeList">
+        <img [src]='episode.image' />
+        <div class="episode-content">
           <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
-          <span id="epicontent" [innerHtml]="episode.description"></span>
+          <span id="epicontent" [innerHtml]="episode.description | truncateText: 250"></span>
         </div>
+      </div>
     </div>
 </div>

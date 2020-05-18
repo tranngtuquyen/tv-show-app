@@ -1,6 +1,9 @@
+.nav-bar{
+  margin-bottom: 20px;
+}
 .title{
   color: #DB202C;
-  font-size: 30px;
+  font-size: 2em;
   font-family: sans-serif;
 }
 .name{
@@ -75,4 +78,6 @@
     margin: 15px;
 
   }
-
+  .episode-content {
+    width: 300px;
+  }

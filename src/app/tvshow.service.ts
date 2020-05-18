@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { IShow, IEpisode } from './ishow';
 import { map } from 'rxjs/operators';
+import { Ishowservice } from './ishowservice';
 
 
 interface IShowData {
@@ -59,7 +60,7 @@ interface IShowData {
 @Injectable({
   providedIn: 'root'
 })
-export class TvshowService {
+export class TvshowService implements Ishowservice{
 
   constructor(private httpclient: HttpClient) { }
 

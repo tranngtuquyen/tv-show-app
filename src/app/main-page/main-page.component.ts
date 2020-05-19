@@ -8,7 +8,11 @@ import { IShow} from '../ishow';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  showList: IShow[];
+  showList: IShow[] = [];
+  actionList: IShow[] = [];
+  crimeList: IShow[] = [];
+  trendingList: IShow[] = [];
+  thrillerList: IShow[] = [];
 
   constructor(private showService: TvshowService) { }
 
@@ -17,6 +21,12 @@ export class MainPageComponent implements OnInit {
   }
 
   getAllShows() {
-    this.showService.getAllShows().subscribe(data => this.showList = data);
+    this.showService.getAllShows().subscribe(data => {
+      this.showList = data;
+      this.actionList = this.showService.getShowByGenre(data, "Action");
+      this.crimeList = this.showService.getShowByGenre(data, "Crime");
+      this.trendingList = this.showService.getShowByRating(data, 8);
+      this.thrillerList = this.showService.getShowByGenre(data, "Thriller");
+    });
   }
 }

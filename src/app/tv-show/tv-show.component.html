@@ -1,6 +1,8 @@
 <mat-toolbar>
-  <div class =title >N FILM </div>
+  <!--Angular material installed to use toolbar and other layouts-->
+<div>N FILM</div>
 </mat-toolbar>
+
 <div style="margin: 15px">
   <div class =name >{{ show.name }} </div>
   <div class= p >
@@ -33,7 +35,7 @@
   <br/>
   <div>
    <select class="box" >
-      <option  *ngFor="let season of show.seasons;index as i" >  Season {{ i+1 }}</option>
+      <option  *ngFor="let season of show.seasons;index as i"  >  Season {{ i+1 }}</option>
    </select>
   </div>
     <br/>
@@ -43,7 +45,9 @@
         <div class="episode-content">
           <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
           <span id="epicontent" [innerHtml]="episode.description | truncateText: 250"></span>
+          <!--TruncateText is a pipe added which will trim our description with 250 letters-->
         </div>
       </div>
     </div>
 </div>
+

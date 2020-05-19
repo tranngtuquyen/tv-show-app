@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IShow, IEpisode } from '../ishow';
 import { TvshowService } from '../tvshow.service';
+import { ActivatedRoute } from "@angular/router";
+//Routing added
 
 @Component({
   selector: 'app-tv-show',
@@ -10,16 +12,21 @@ import { TvshowService } from '../tvshow.service';
 export class TvShowComponent implements OnInit {
   show: IShow;
   episodeList: IEpisode[];
+  id: number;
 
-  constructor(private tvshowservice:TvshowService) { }
+  constructor(private route: ActivatedRoute,private tvshowservice:TvshowService) {
+    this.route.params.subscribe(params => this.id =params.id);
+  }
+  // route is the variable used from our component routing which will get the id from the url path.
 
   ngOnInit(): void {
-    this.tvshowservice.getTvShow(2).subscribe((data) => (this.show = data));
-    this.getEpisodeList()
+    this.tvshowservice.getTvShow(this.id).subscribe((data) => (this.show = data));
+    this.getEpisodeList(this.id)
   }
+// instead of hardcoding id ,now we got id from the route url
 
-  getEpisodeList() {
-    this.tvshowservice.getIEpisodeList(3).subscribe(data => this.episodeList = data);
+  getEpisodeList(id:number) {
+    this.tvshowservice.getIEpisodeList(this.id).subscribe(data => this.episodeList = data);
   }
 
 }

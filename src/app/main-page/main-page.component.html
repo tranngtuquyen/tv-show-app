@@ -1,22 +1,56 @@
-<!-- <div class="show-list container">
-
-  <div class="col-md-3 col-sm-4 col-xs-6" *ngFor="let show of showList" class="show-image">
-    <img [src]="show.image">
+<!--Old code without navigation
+  <div class="show-list">
+  <div id= "home-content" *ngFor="let show of showList" class="show-image">
+    <a routerLink="/details/{{show.id}}">
+    <img [src]="show.image" >
+  </a>
   </div>
-</div> -->
+</div>-->
 
+<!--
+<div>N FILM</div>
+-->
 
 <div class= "container-fluid">
+  <div>
+    <h2 class="section-title">Trending Now</h2>
+    <app-tv-show-list [showList]="trendingList"></app-tv-show-list>
+  </div>
+
+  <div>
+    <h2 class="section-title">Action</h2>
+    <app-tv-show-list [showList]="actionList"></app-tv-show-list>
+  </div>
+
+  <div>
+    <h2 class="section-title">Crime</h2>
+    <app-tv-show-list [showList]="crimeList"></app-tv-show-list>
+  </div>
+
+  <div>
+    <h2 class="section-title">Thriller</h2>
+    <app-tv-show-list [showList]="thrillerList"></app-tv-show-list>
+  </div>
+</div>
+
+<!--
+Display all show thumbnails 
+
+<div class= "container-fluid">
+  //Bootstrap installed to use container classes for alignment and UI design
+
   <section class="row">
-    <div  id= "home-content" *ngFor="let show of     showList" class="col-md-2 col-sm-4 col-xs-6">
+    <div  id= "home-content" *ngFor="let show of showList" class="col-md-2 col-sm-4 col-xs-6">
       <a routerLink="/details/{{show.id}}">
+        //Routing added will take show with its id to navigate to the show details page i.e tvshow component.
       <div id="myIcon">
      <img [src]= 'show.image'>
-     </div> 
+     </div>
     </a>
     </div>
   </section>
 </div>
+<<<<<<< HEAD
 
 
 
@@ -24,3 +58,8 @@
 
 
         
+=======
+-->
+
+
+>>>>>>> b9e55447170cdc5d0f0dc60e097fbbaea7f5c014

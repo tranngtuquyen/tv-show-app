@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { IShow, IEpisode } from './ishow';
 import { map } from 'rxjs/operators';
+import { Ishowservice } from './ishowservice';
 
 
 interface IShowData {
@@ -49,7 +50,7 @@ interface IShowData {
 @Injectable({
   providedIn: 'root'
 })
-export class TvshowService {
+export class TvshowService implements Ishowservice{
 
   constructor(private httpclient: HttpClient) { }
 
@@ -118,7 +119,13 @@ export class TvshowService {
     .pipe(map(data => data.map(d => this.transformToIShows(d))))
   }
 
+  getShowByGenre(showList: IShow[],genre: string) {
+    return showList.filter(show => show.genres.indexOf(genre) !== -1);
+  }
 
+  getShowByRating(showList: IShow[], minRating: number) {
+    return showList.filter(show => show.rating > minRating);
+  }
 }
 
 

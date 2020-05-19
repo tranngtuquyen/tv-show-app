@@ -6,23 +6,33 @@ import { AppComponent } from './app.component';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainPageComponent } from './main-page/main-page.component';
-import { ShowDetailsComponent } from './show-details/show-details.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TruncateTextPipe } from './truncate-text.pipe';
+import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EpisodesComponent } from './episodes/episodes.component';
+import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TvShowComponent,
     MainPageComponent,
-    ShowDetailsComponent,
-    EpisodesComponent
+    TruncateTextPipe,
+    TvShowListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [TvshowService],
   bootstrap: [AppComponent]

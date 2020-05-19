@@ -1,26 +1,21 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//imported components required for routing
-import { ShowDetailsComponent } from './show-details/show-details.component';
+import { TvShowComponent } from './tv-show/tv-show.component';
 import { MainPageComponent } from './main-page/main-page.component'
-import { EpisodesComponent } from './episodes/episodes.component';
-
-
+//import all the components used for routing
 
 const routes: Routes = [
-// added path
-  {
-    path: 'details/:id', //Given this path, should route to ShowDetailsComponent
-    component: ShowDetailsComponent
-  },
-  {
-    path:'', //empty path should route to main-page component
-    component: MainPageComponent
-  },
-  {
-    path: 'details/:id/episodes',
-    component: EpisodesComponent
-  }
+
+{
+  path:'details/:id',
+  //Given this path, should route to tv-show Component
+  component: TvShowComponent
+},
+{
+  path:'',
+  //empty path should route to main-page component
+  component: MainPageComponent
+},
 ];
 
 @NgModule({

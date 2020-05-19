@@ -1,19 +1,9 @@
+.nav-bar{
+  margin-bottom: 20px;
+}
 .title{
   color: #DB202C;
-  font-size: 50px;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-
-.navbar-default{
-  background-color: black
-}
-
-
-/*
-.title{
-  color: #DB202C;
-  font-size: 30px;
+  font-size: 2em;
   font-family: sans-serif;
 
 }
@@ -90,5 +80,7 @@
     font-family:Microsoft sans-serif;
     margin: 15px;
 
-  } */
-
+  }
+  .episode-content {
+    width: 300px;
+  }

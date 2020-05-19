@@ -124,7 +124,7 @@ export class TvshowService implements Ishowservice{
   }
 
   getShowByGenre(showList: IShow[],genre: string) {
-    return showList.filter(show => show.genres.indexOf(genre));
+    return showList.filter(show => show.genres.indexOf(genre) !== -1);
   }
 
   getShowByRating(showList: IShow[], minRating: number) {

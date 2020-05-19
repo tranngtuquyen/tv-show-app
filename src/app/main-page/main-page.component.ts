@@ -10,7 +10,7 @@ import { IShow} from '../ishow';
 export class MainPageComponent implements OnInit {
   showList: IShow[] = [];
   actionList: IShow[] = [];
-  dramaList: IShow[] = [];
+  crimeList: IShow[] = [];
   trendingList: IShow[] = [];
   thrillerList: IShow[] = [];
 
@@ -24,7 +24,7 @@ export class MainPageComponent implements OnInit {
     this.showService.getAllShows().subscribe(data => {
       this.showList = data;
       this.actionList = this.showService.getShowByGenre(data, "Action");
-      this.dramaList = this.showService.getShowByGenre(data, "Drama");
+      this.crimeList = this.showService.getShowByGenre(data, "Crime");
       this.trendingList = this.showService.getShowByRating(data, 8);
       this.thrillerList = this.showService.getShowByGenre(data, "Thriller");
     });

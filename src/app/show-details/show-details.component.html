@@ -1,6 +1,6 @@
-<!--   
+  
 <div >
-  <div class =title >N FILM </div>
+ 
   <div class =name >{{ show.name }} </div>
   <div class= p >
      <span> {{  show.year.substr(0,4) }}</span>
@@ -19,19 +19,19 @@
       </span>
  </div>
 
-  <div class=details>
+ <div class=details>
       <br/>
       <span>Starring : {{show.cast.slice(0,3)}}</span>
       <br/>
       <span>Genres : {{ show.genres}} </span>
       <br/>
-      <span>Rating : {{show.rating }}</span>
+      <span>Rating : {{show.rating }}</span> 
 
   </div>
   <br/>
   <div>
    <select class="box" >
-      <option  *ngFor="let season of show.seasons;index as i" >  Season {{ i+1 }}</option>
+     <option  *ngFor="let season of show.seasons;index as i" [value]='season.id'>  Season {{ i+1 }}</option>
    </select>
   </div>
     <br/>
@@ -43,10 +43,4 @@
           <span id="epicontent" [innerHtml]="episode.description"></span>
         </div>
     </div>
-</div> -->
-
- 
-<div>
-      <a class ="title" routerLink=""><div>N FILM</div></a>
-</div>
-
+</div> 

@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ShowDetailsComponent } from './show-details/show-details.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EpisodesComponent } from './episodes/episodes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TvShowComponent,
-    MainPageComponent
+    MainPageComponent,
+    ShowDetailsComponent,
+    EpisodesComponent
   ],
   imports: [
     BrowserModule,

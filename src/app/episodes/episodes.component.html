@@ -1,0 +1,10 @@
+
+    <div class="container">
+        <div  *ngFor="let episode of episodeList">
+          <img [src]='episode.image'>
+          <br/>
+          <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
+          <span id="epicontent" [innerHtml]="episode.description"></span>
+        </div>
+    </div>
+

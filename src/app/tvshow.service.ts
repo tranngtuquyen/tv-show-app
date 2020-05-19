@@ -122,6 +122,14 @@ export class TvshowService implements Ishowservice{
     return this.httpclient.get<IShowData[]>(url)
     .pipe(map(data => data.map(d => this.transformToIShows(d))))
   }
+
+  getShowByGenre(showList: IShow[],genre: string) {
+    return showList.filter(show => show.genres.indexOf(genre));
+  }
+
+  getShowByRating(showList: IShow[], minRating: number) {
+    return showList.filter(show => show.rating > minRating);
+  }
 }
 
 

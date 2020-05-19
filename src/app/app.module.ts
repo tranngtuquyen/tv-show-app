@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TruncateTextPipe } from './truncate-text.pipe';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     TvShowComponent,
     MainPageComponent,
-    TruncateTextPipe
+    TruncateTextPipe,
+    TvShowListComponent
   ],
   imports: [
     BrowserModule,

@@ -7,14 +7,42 @@
   </div>
 </div>-->
 
+<!--
 <div>N FILM</div>
+-->
+
 <div class= "container-fluid">
-  <!--Bootstrap installed to use container classes for alignment and UI design-->
+  <div>
+    <h2 class="section-title">Trending Now</h2>
+    <app-tv-show-list [showList]="trendingList"></app-tv-show-list>
+  </div>
+
+  <div>
+    <h2 class="section-title">Action</h2>
+    <app-tv-show-list [showList]="actionList"></app-tv-show-list>
+  </div>
+
+  <div>
+    <h2 class="section-title">Drama</h2>
+    <app-tv-show-list [showList]="dramaList"></app-tv-show-list>
+  </div>
+
+  <div>
+    <h2 class="section-title">Thriller</h2>
+    <app-tv-show-list [showList]="thrillerList"></app-tv-show-list>
+  </div>
+</div>
+
+<!--
+Display all show thumbnails 
+
+<div class= "container-fluid">
+  //Bootstrap installed to use container classes for alignment and UI design
 
   <section class="row">
-    <div  id= "home-content" *ngFor="let show of     showList" class="col-md-2 col-sm-4 col-xs-6">
+    <div  id= "home-content" *ngFor="let show of showList" class="col-md-2 col-sm-4 col-xs-6">
       <a routerLink="/details/{{show.id}}">
-        <!--Routing added will take show with its id to navigate to the show details page i.e tvshow component.-->
+        //Routing added will take show with its id to navigate to the show details page i.e tvshow component.
       <div id="myIcon">
      <img [src]= 'show.image'>
      </div>
@@ -22,4 +50,6 @@
     </div>
   </section>
 </div>
+-->
+
 

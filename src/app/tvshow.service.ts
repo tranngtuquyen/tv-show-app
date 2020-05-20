@@ -27,8 +27,8 @@ interface IShowData {
    days: string[]
  },
  _embedded:{
-  seasons: Array<{ number: number}>,
-
+  //seasons: Array<{ number: number}> Changing to id, as we require season id to get list of episodes
+  seasons: Array<{ id : number}>
   cast: Array<{ person: { name: string }}>
  }
  }
@@ -81,17 +81,15 @@ export class TvshowService implements Ishowservice{
   transformToCast(data: Array<{person: {name: string}}>): string[] {
     return  data.map(value=> value.person.name);
   }
-  transformToSeasons(data: Array<{number: number}>): number[] {
-  return data.map(value=> value.number);
-    }
+// transformToSeasons(data: Array<{number: number}>): number[] {
+//     return data.map(value=> value.number)
+// }
 
-  
-  //Get list of IEpisode from API by season ID
-  // getIEpisodeList(seasonId: number) {
-  //   const url = `http://api.tvmaze.com/seasons/${seasonId}/episodes`;
-  //   return this.httpclient.get<IEpisodeData[]>(url)
-  //   .pipe(map(data => this.transfromToIEpisodeList(data)))
-  // }
+
+//Changing to id, as we require season id to get list of episodes
+    transformToSeasons(data: Array<{id: number}>): number[] {
+  return data.map(value=> value.id);
+    }
 
   getIEpisodeList(seasonId: number) {
     const url = `http://api.tvmaze.com/seasons/${seasonId}/episodes`;

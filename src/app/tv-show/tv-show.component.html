@@ -8,6 +8,7 @@
   <div class= p >
      <span> {{  show.year.substr(0,4) }}</span>
       <span> {{ show.language }}</span>
+     
   </div>
   <div fxLayout="row" fxFlexAlign="space-around space-around">
     <div fxFlex></div>
@@ -34,10 +35,14 @@
   </div>
   <br/>
   <div>
-   <select class="box" >
-      <option  *ngFor="let season of show.seasons;index as i"  >  Season {{ i+1 }}</option>
-   </select>
-  </div>
+        <!-- event binding of (change) event to event handler -->
+           <select class="box"(change)="selectChangeHandler($event)">
+          <!--binding value property of option element to the season id-->
+             <option>Select Season</option>
+             <option  *ngFor="let season of show.seasons;index as i" [value]='season'>Season {{ i+1 }}</option>
+           </select>
+          </div>
+    
     <br/>
     <div class="container">
       <div  *ngFor="let episode of episodeList">
@@ -49,5 +54,5 @@
         </div>
       </div>
     </div>
-</div>
+</div> 
 

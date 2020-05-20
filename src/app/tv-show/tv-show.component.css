@@ -5,8 +5,11 @@
   color: #DB202C;
   font-size: 2em;
   font-family: sans-serif;
+
 }
-.name{
+
+
+ .name{
   text-orientation: initial;
   font-weight:bold;
   font-size: 100px;
@@ -37,7 +40,8 @@
 
 }
 .box {
-  width: 120px;
+  /* width: 120px; */
+  width: 138px;
   height: 30px;
   border: 1px solid #999;
   font-size: 18px;

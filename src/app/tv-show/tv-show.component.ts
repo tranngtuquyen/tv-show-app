@@ -33,7 +33,7 @@ selectChangeHandler(event: any){
     }
     getEpisodeList(id) {
       this.tvshowservice.getIEpisodeList(this.selectedSeasonID).subscribe(data => this.episodeList = data);
-      console.log(this.selectedSeasonID);
+      
     }
    
   }

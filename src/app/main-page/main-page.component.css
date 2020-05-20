@@ -3,6 +3,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin-left: 35px;
+  margin-top: 60px;
 }
 .show-image {
   flex: 20%;

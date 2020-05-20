@@ -8,25 +8,11 @@
   flex: 20%;
   margin-bottom: 20px;
 }*/
-#home-content {
-  margin-top: 50px;
 
- }
-
- a {
-   text-decoration: none;
-   color:black;
-
- }
- #myIcon:hover{
-   box-shadow: 0 1px 5px 1px #cccccc;
- }
-
- img{
-
-   width: 100%;
-   height:100%;
- }
 .section-title {
   color: white;
+  font-size: 30px ;
+  text-align: left;
+  font-family:Microsoft sans-serif;
+  margin: 5px;
 }

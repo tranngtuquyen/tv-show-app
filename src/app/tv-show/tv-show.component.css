@@ -1,82 +1,90 @@
-/* .nav-bar{
-  margin-bottom: 20px;
-} */
- .name{
-  text-orientation: initial;
-  font-weight:bold;
-  font-size: 100px;
-  font-family: Candara;
-  font-variant-caps:petite-caps ;
-  color: white;
-}
-.p{
-  font-size: 20px;
-  color: white;
-}
-.content{
-  float: right;
-  width: 700px;
-}
-#desc{
-
-  font-size: 30px ;
-  color: #AAA7A7;
-  text-align: left;
-  font-family:Microsoft sans-serif;
-  margin: 5px;
-
-}
-.details{
-  color: #B1AEAE;
-  font-size: 20px ;
-
-}
-.box {
-  /* width: 120px; */
-  width: 138px;
-  height: 30px;
-  border: 1px solid #999;
-  font-size: 18px;
-  color: #1c87c9;
-  background-color: #eee;
-  border-radius: 5px;
-
-}
-
-  .container {
-    display: flex;
-    overflow-x: auto;
-  }
-  .container img {
-      width: 300px;
-      margin-right: 30px;
-      }
-     
-  .container::-webkit-scrollbar {
-       display: none;
-  }
-  
-  body {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-  }
-  #episode{
-    font-size: 20px ;
+  /* .nav-bar{
+    margin-bottom: 20px;
+  } */
+  .name{
+    text-orientation: initial;
+    font-weight:bold;
+    font-size: 100px;
+    font-family: Candara;
+    font-variant-caps:petite-caps ;
     color: white;
+  }
+  .p{
+    font-size: 20px;
+    color: white;
+  }
+  .content{
+    float: right;
+    width: 700px;
+  }
+  #desc{
+  
+    font-size: 30px ;
+    color: #AAA7A7;
     text-align: left;
     font-family:Microsoft sans-serif;
     margin: 5px;
+  
   }
+  .details{
+    color: #B1AEAE;
+    font-size: 20px ;
+  
+  }
+  .box {
+    /* width: 120px; */
+    width: 138px;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: #1c87c9;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-left:-45px;
+  
+  }
+    /* .container {
+      display: flex;
+      overflow-x: auto;
+    } */
+    /* .container img {
+      width: 300px;
+      margin-right: 30px;
+      } */
+    .container::-webkit-scrollbar {
+         display: none;
+    }
 
-  #epicontent{
-    font-size: 15px ;
-    color:grey;
-    text-align: left;
-    font-family:Microsoft sans-serif;
-    margin: 15px;
+    body {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+    }
+    #episode{
+      font-size: 20px;
+      color: white;
+      text-align: left;
+      font-family:Microsoft sans-serif; 
+    }
+  
+    #epicontent{
+      font-size: 20px ;
+      color:grey;
+      text-align: left;
+      font-family:Microsoft sans-serif;
+    }
+    /* .episode-content {
+      width: 300px;
+    } */
 
-  }
-  .episode-content {
-    width: 300px;
-  }
+    .col-md-5{
+      margin-bottom: 30px;
+    }
+
+    p{
+      font-size: 20px;
+      color:grey;
+      text-align: left;
+      font-family:Microsoft sans-serif;
+      margin-top: -40px;
+    }

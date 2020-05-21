@@ -42,26 +42,23 @@
              <option  *ngFor="let season of show.seasons;index as i" [value]='season'>Season {{ i+1 }}</option>
            </select>
           </div>
-    
     <br/> 
 
-
-  <!--Some shows have seasons but no episode list. The following line displays the episdoe deatils only if episodeList is available,else says "Episode List not available" -->
-      <div *ngIf="episodeList?.length ==0 && selectedSeasonID" >
-        <p class="check">Episode List for this season is not available.</p>
-      </div>
-
+    <!--Some shows have seasons but no episode list. The following line displays the episdoe deatils only if episodeList is available,else says "Episode List not available" -->
+          <div *ngIf="episodeList?.length ==0 && selectedSeasonID" >
+            <p class="check">Episode List for this season is not available.</p>
+          </div>
 
       <div  *ngFor="let episode of episodeList">
       <div class="container">
       <section class="row">
         <div class="col-md-5">
-        <img height="500" width="500" [src]='episode.image'>
+        <img height="250" width="400" [src]='episode.image'>
         </div>
           <section class="col-md-7">
           <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
-          <h2 id="epicontent" [innerHtml]="episode.description | truncateText: 500"></h2></section>
-          <!--TruncateText is a pipe added which will trim our description with 250 letters-->
+          <span id="epicontent" [innerHtml]="episode.description | truncateText: 500"></span></section>
+          <!--TruncateText is a pipe added which will trim our description with 500 letters-->
       </section>
         </div>
         </div>

@@ -1,7 +1,9 @@
 <div class="show-list-section">
   <div *ngFor="let show of showList">
     <a routerLink="/details/{{show.id}}">
-    <img [src]="show.image">
+      <div class="container"> 
+    <img [src]="show.image"></div>
     </a>
   </div>
-</div>
+  </div>
+

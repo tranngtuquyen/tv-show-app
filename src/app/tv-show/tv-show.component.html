@@ -43,20 +43,30 @@
            </select>
           </div>
     
-    <br/>
-    <div class="container">
-      <div *ngIf="!episodeList?.length">
-        <p>Episode List is empty.</p>
+    <br/> 
+
+
+  <!--Some shows have seasons but no episode list. The following line displays the episdoe deatils only if episodeList is available,else says "Episode List not available" -->
+      <div *ngIf="episodeList?.length ==0 && selectedSeasonID" >
+        <p class="check">Episode List for this season is not available.</p>
       </div>
+
+
       <div  *ngFor="let episode of episodeList">
-       
-        <img [src]='episode.image' />
-        <div class="episode-content">
+      <div class="container">
+      <section class="row">
+        <div class="col-md-5">
+        <img height="500" width="500" [src]='episode.image'>
+        </div>
+          <section class="col-md-7">
           <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
-          <span id="epicontent" [innerHtml]="episode.description | truncateText: 250"></span>
+          <h2 id="epicontent" [innerHtml]="episode.description | truncateText: 500"></h2></section>
           <!--TruncateText is a pipe added which will trim our description with 250 letters-->
+      </section>
         </div>
         </div>
       </div>
-</div> 
+      
+     
+
 

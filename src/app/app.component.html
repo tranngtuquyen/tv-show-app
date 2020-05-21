@@ -1,11 +1,35 @@
 <mat-toolbar  color="primary"  class="fixed-header">
   <mat-toolbar-row>
   <span><a routerLink=""><img  src="./assets/logo.png"  style="width:150px;"></a></span>
-  <span class="icons"><a >TvShows</a></span>
+  <span class="icons"><a >Home</a></span>
+  
+  <!-- Old code
+    <span class="icons"><a >TvShows</a></span>
+  -->
+
+  <!-- Using dropdown from bootstrap
+    <div class="dropdown">
+      <button class="btn dropdown-toggle dropdown-button" type="button" data-toggle="dropdown">TvShows
+      </button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let genre of genres"><a routerLink="/genre/{{genre | lowercase}}">{{genre}}</a></li>
+      </ul>
+    </div>
+  -->
+    
+  <!--Using dropdown from angular/material-->
+  <button class="dropdown-button" [matMenuTriggerFor]="shows">TvShows</button>
+  <mat-menu #shows="matMenu">
+    <span mat-menu-item *ngFor="let genre of genres" routerLink="/genre/{{genre | lowercase}}" 
+    class="dropdown-item">{{genre}}</span>
+  </mat-menu>
+  
+
   <span class="icons"><a >Movies</a></span>
   <span class="icons"><a >My List</a></span>
   <span class="icons"><a >Latest</a></span>
-  <span class="searchclass"> <app-search></app-search></span>
+  <span class="searchclass">
+    <app-search (searchEvent)="doSearch($event)"> </app-search></span>
   <span class="icons"><a >Kids</a></span>
   <span class="icons"><a >DVD</a></span>
   </mat-toolbar-row>

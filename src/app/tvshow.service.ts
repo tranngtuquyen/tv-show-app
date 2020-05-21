@@ -54,12 +54,25 @@ export class TvshowService implements Ishowservice{
 
   constructor(private httpclient: HttpClient) { }
 
-  getTvShow(id : number) {
+  getTvShowSearch(search : number|string) {
+    let uriParams = '';
+    if (typeof search === 'string'){
+      uriParams = `q=${search}`
+    } else {
+      uriParams =`${search}`
+    }
     return this.httpclient.get<IShowData>(
-      `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.
+      `${environment.baseUrl}api.tvmaze.com/shows/${uriParams}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.
         transformToIShows(data))
       )
     }
+
+    getTvShow(id : number) {
+      return this.httpclient.get<IShowData>(
+        `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.
+          transformToIShows(data))
+        )
+      }
   transformToIShows(data: IShowData) : IShow {
    return {
     id: data.id,
@@ -95,7 +108,7 @@ export class TvshowService implements Ishowservice{
     return this.httpclient.get<IEpisodeData[]>(url)
     .pipe(map(data => this.transfromToIEpisodeList(data)))
   }
-  
+
   transformToIEpisode(data: IEpisodeData) : IEpisode {
     return ({
       id: data.id,

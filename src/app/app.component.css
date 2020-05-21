@@ -1,7 +1,10 @@
-.title{
-  color: #DB202C;
-  font-size: 30px;
-  font-family: sans-serif;
-  text-decoration: none;
-  margin-top: 0px;
+.searchclass{
+  text-align: right;
+  flex: 1 1 auto;
+}
+.icons{
+  color:white;
+  margin-left:15px;
+  margin-right: 15px;
+
 }

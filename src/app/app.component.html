@@ -1,12 +1,43 @@
-<div style="text-align:center">
-  <h1>
-    <div>
-      <a class ="title" routerLink="">
-    Netflix
-    </a>
-    </div>
-  </h1>
+<mat-toolbar  color="primary"  class="fixed-header">
+  <mat-toolbar-row>
+  <span><a routerLink=""><img  src="./assets/logo.png"  style="width:150px;"></a></span>
+  <span class="icons"><a >Home</a></span>
+  <span class="icons"><a >TvShows</a></span>
+  <span class="icons"><a >Movies</a></span>
+  <span class="icons"><a >My List</a></span>
+  <span class="icons"><a >Latest</a></span>
+  <span class="searchclass"> <app-search></app-search></span>
+  <span class="icons"><a >Kids</a></span>
+  <span class="icons"><a >DVD</a></span>
+  </mat-toolbar-row>
+  </mat-toolbar>
+
+<!--<div>
+
+    <a class ="title" routerLink="">
+    NETFLIX
+  </a>
+
+
+  <div fxLayoutAlign="center">
+    <app-search></app-search>
   </div>
+</div>-->
+
+
+
+
+<!--<div>
+      <a class ="title" routerLink="">
+    NETFLIX
+    </a>
+</div>
+<div fxLayoutALign="center">
+  <app-search></app-search>
+
+</div>-->
+
+
   <!--old code
     <app-tv-show></app-tv-show>
   <app-main-page></app-main-page>-->

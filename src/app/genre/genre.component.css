@@ -1,3 +1,9 @@
 .showList {
   margin-bottom: 20px;
 }
+.section-title {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-bottom:10px;
+}

@@ -10,6 +10,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class GenreComponent implements OnInit {
   showsByGenre: IShow[] = [];
+  genre: string;
+
   constructor(
     private showService: TvshowService,
     private route: ActivatedRoute
@@ -23,10 +25,8 @@ export class GenreComponent implements OnInit {
 
   getShowByGenre() {
     let term = this.route.snapshot.paramMap.get("term");
-    console.log(term);
-    term = term.slice(0,1).toUpperCase() + term.slice(1);
-    console.log(term);
-    this.showService.getAllShows().subscribe(data => {this.showsByGenre = this.showService.getShowByGenre(data, term); console.log(term)});
+    this.genre = term.slice(0,1).toUpperCase() + term.slice(1);
+    this.showService.getAllShows().subscribe(data => this.showsByGenre = this.showService.getShowByGenre(data, this.genre));
   }
 
 }

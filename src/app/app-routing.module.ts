@@ -2,6 +2,8 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { MainPageComponent } from './main-page/main-page.component'
+
+import { GenreShowsComponent } from './genre-shows/genre-shows.component';
 //import all the components used for routing
 
 const routes: Routes = [
@@ -15,7 +17,7 @@ const routes: Routes = [
   path:'',
   //empty path should route to main-page component
   component: MainPageComponent
-},
+}
 ];
 
 @NgModule({

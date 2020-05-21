@@ -19,6 +19,7 @@ import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 import { SearchComponent } from './search/search.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import { SearchComponent } from './search/search.component';
     MainPageComponent,
     TruncateTextPipe,
     TvShowListComponent,
-    SearchComponent
+    SearchComponent,
+    
+    GenreShowsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tv-show-app';
+  genres: string[] = [
+    'Action', 'Anime', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'Horror',
+    'Mystery', 'Romance', 'Supernatural', 'Thriller'
+  ];
 }

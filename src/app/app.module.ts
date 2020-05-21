@@ -17,7 +17,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 import { SearchComponent } from './search/search.component';
-
+import {MatMenuModule} from '@angular/material/menu';
+import { GenreComponent } from './genre/genre.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { SearchComponent } from './search/search.component';
     MainPageComponent,
     TruncateTextPipe,
     TvShowListComponent,
-    SearchComponent
+    SearchComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { SearchComponent } from './search/search.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    
+    MatMenuModule,
+    OverlayModule,
+    MatButtonModule
   ],
   providers: [TvshowService],
   bootstrap: [AppComponent]

@@ -28,7 +28,8 @@
   <span class="icons"><a >Movies</a></span>
   <span class="icons"><a >My List</a></span>
   <span class="icons"><a >Latest</a></span>
-  <span class="searchclass"> <app-search></app-search></span>
+  <span class="searchclass">
+    <app-search (searchEvent)="doSearch($event)"> </app-search></span>
   <span class="icons"><a >Kids</a></span>
   <span class="icons"><a >DVD</a></span>
   </mat-toolbar-row>

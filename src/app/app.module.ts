@@ -21,7 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { GenreComponent } from './genre/genre.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatButtonModule } from '@angular/material/button';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatMenuModule,
     OverlayModule,
-    MatButtonModule
+    MatButtonModule,
+    SlickCarouselModule
   ],
   providers: [TvshowService],
   bootstrap: [AppComponent]

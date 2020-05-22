@@ -11,4 +11,17 @@
   </div>
 
   
-
+  <div class="content">
+    <ngx-slick-carousel class="carousel" 
+      #slickModal="slick-carousel" 
+      [config]="slideConfig" >
+      <div ngxSlickItem *ngFor="let show of showList" class="slide">
+        <a routerLink="/details/{{show.id}}">
+          <div id='myIcon'>
+          <img [src]="show.image">
+          </div>
+        </a>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  

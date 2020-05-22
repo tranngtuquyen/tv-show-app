@@ -15,6 +15,7 @@ export class AppComponent {
 
 
   tvshow: IShow;
+  genres: string[] = [    'Action','Anime','Comedy','Crime','Drama','Family','Fantasy','Horror','Mystery','Romance','Supernatural','Thriller'  ];
 
   constructor(private tvshowService: TvshowService){}
 

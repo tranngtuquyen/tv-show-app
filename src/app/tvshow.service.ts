@@ -98,7 +98,6 @@ export class TvshowService implements Ishowservice{
 //     return data.map(value=> value.number)
 // }
 
-
 //Changing to id, as we require season id to get list of episodes
     transformToSeasons(data: Array<{id: number}>): number[] {
   return data.map(value=> value.id);

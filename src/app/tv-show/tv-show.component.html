@@ -1,9 +1,14 @@
+<mat-toolbar>
+  <!--Angular material installed to use toolbar and other layouts-->
+<div>N FILM</div>
+</mat-toolbar>
+
 <div style="margin: 15px">
   <div class =name >{{ show.name }} </div>
   <div class= p >
      <span> {{  show.year.substr(0,4) }}</span>
       <span> {{ show.language }}</span>
-
+     
   </div>
   <div fxLayout="row" fxFlexAlign="space-around space-around">
     <div fxFlex></div>
@@ -37,18 +42,28 @@
              <option  *ngFor="let season of show.seasons;index as i" [value]='season'>Season {{ i+1 }}</option>
            </select>
           </div>
+    <br/> 
 
-    <br/>
-    <div class="container">
+    <!--Some shows have seasons but no episode list. The following line displays the episdoe deatils only if episodeList is available,else says "Episode List not available" -->
+          <div *ngIf="episodeList?.length ==0 && selectedSeasonID" >
+            <p class="check">Episode List for this season is not available.</p>
+          </div>
+
       <div  *ngFor="let episode of episodeList">
-        <img [src]='episode.image' />
-        <div class="episode-content">
+      <div class="container">
+      <section class="row">
+        <div class="col-lg-5">
+        <img height="250" width="400" [src]='episode.image'>
+        </div>
+          <section class="col-lg-7">
           <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
-
-          <span id="epicontent" [innerHtml]="episode.description | truncateText: 250"></span>
-          <!--TruncateText is a pipe added which will trim our description with 250 letters-->
+          <span id="epicontent" [innerHtml]="episode.description | truncateText: 500"></span></section>
+          <!--TruncateText is a pipe added which will trim our description with 500 letters-->
+      </section>
+        </div>
         </div>
       </div>
-    </div>
-</div>
+      
+     
+
 

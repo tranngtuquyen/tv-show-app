@@ -1,21 +1,23 @@
+  <!-- Old codes show-list without scroll arrows
   <div class="show-list-section" >
   <div *ngFor="let show of showList">
     <a routerLink="/details/{{show.id}}">
-      <!-- <div class="container"> 
-    <img [src]="show.image"></div> -->
-     <div id='myIcon'>
-    <img [src]="show.image">
-  </div>
-    </a>
-  </div>
-  </div>
-
+      <!- - <div class="container"> 
+    <img [src]="show.image"></div> - ->
+    <div id='myIcon'>
+      <img [src]="show.image">
+    </div>
+      </a>
+    </div>
+    </div>
+  -->
   
+  <!--Slick carousel with scroll arrows-->
   <div class="content">
     <ngx-slick-carousel class="carousel" 
       #slickModal="slick-carousel" 
       [config]="slideConfig" >
-      <div ngxSlickItem *ngFor="let show of showList" class="slide">
+      <div ngxSlickItem *ngFor="let show of showList" class="slide show-image">
         <a routerLink="/details/{{show.id}}">
           <div id='myIcon'>
           <img [src]="show.image">

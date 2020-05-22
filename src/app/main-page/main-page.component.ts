@@ -22,7 +22,7 @@ export class MainPageComponent implements OnInit {
 
   getAllShows() {
     this.showService.getAllShows().subscribe(data => {
-      this.showList = data;
+      //this.showList = data;
       this.actionList = this.showService.getShowByGenre(data, "Action");
       this.crimeList = this.showService.getShowByGenre(data, "Crime");
       this.trendingList = this.showService.getShowByRating(data, 8);

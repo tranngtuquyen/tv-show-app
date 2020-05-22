@@ -13,6 +13,7 @@ const routes: Routes = [
   component: TvShowComponent
 },
 {
+  
   path:'',
   //empty path should route to main-page component
   component: MainPageComponent

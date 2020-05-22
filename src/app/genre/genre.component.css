@@ -7,3 +7,6 @@
   font-size: 20px;
   margin-bottom:10px;
 }
+div img:hover{
+  box-shadow: 1px 1px 5px 1px #cccccc;
+}

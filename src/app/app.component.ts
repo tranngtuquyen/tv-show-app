@@ -10,6 +10,7 @@ import { TvshowService } from './tvshow.service';
 export class AppComponent {
   title = 'tv-show-app';
   tvshow: IShow;
+  genres: string[] = [    'Action','Anime','Comedy','Crime','Drama','Family','Fantasy','Horror','Mystery','Romance','Supernatural','Thriller'  ];
 
   constructor(private tvshowService: TvshowService){}
 

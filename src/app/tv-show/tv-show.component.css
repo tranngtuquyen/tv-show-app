@@ -10,6 +10,7 @@
     color: white;
   }
   .p{
+    margin-left:5px;
     font-size: 20px;
     color: white;
   }
@@ -18,31 +19,32 @@
     width: 700px;
   }
   #desc{
-  
+
     font-size: 30px ;
     color: #AAA7A7;
     text-align: left;
     font-family:Microsoft sans-serif;
     margin: 5px;
-  
+
   }
   .details{
     color: #B1AEAE;
     font-size: 20px ;
-  
+
   }
   .box {
     /* width: 120px; */
     width: 138px;
     height: 30px;
-    border: 1px solid #999;
+    border: white 1px solid;
     font-size: 18px;
-    color: #1c87c9;
-    background-color: #eee;
+    color:white;
+    background-color: black;
     border-radius: 5px;
     margin-left:-45px;
-  
+
   }
+
     /* .container {
       display: flex;
       overflow-x: auto;
@@ -63,17 +65,17 @@
       font-size: 20px;
       color: white;
       text-align: left;
-      font-family:Microsoft sans-serif; 
-      
-      
+      font-family:Microsoft sans-serif;
+
+
     }
-  
+
     #epicontent{
       font-size: 20px ;
       color:grey;
       text-align: left;
       font-family:Microsoft sans-serif;
-    
+
     }
     /* .episode-content {
       width: 300px;
@@ -95,11 +97,11 @@
         text-align:center;
       }
      section img{
-      
+
        display: block;
        margin-left: auto;
        margin-right: auto;
        width: 350px;
      }
- 
+
     }

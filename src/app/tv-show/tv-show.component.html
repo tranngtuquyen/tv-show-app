@@ -1,15 +1,23 @@
-<mat-toolbar>
-  <!--Angular material installed to use toolbar and other layouts-->
-<div>N FILM</div>
-</mat-toolbar>
-
 <div style="margin: 15px">
   <div class =name >{{ show.name }} </div>
   <div class= p >
      <span> {{  show.year.substr(0,4) }}</span>
+     <label>&nbsp; &nbsp; &nbsp;
       <span> {{ show.language }}</span>
-     
+    </label>
+
+
+ <span>
+      <!-- event binding of (change) event to event handler -->
+         <select class="box"(change)="selectChangeHandler($event)">
+        <!--binding value property of option element to the season id-->
+           <option >Select Season</option>
+           <option  *ngFor="let season of show.seasons;index as i" [value]='season'>Season {{ i+1 }}</option>
+         </select>
+
+      </span>
   </div>
+<br/>
   <div fxLayout="row" fxFlexAlign="space-around space-around">
     <div fxFlex></div>
     <div id="desc" fxFlex="60%">
@@ -25,7 +33,7 @@
 
 
   <div class=details>
-      <br/>
+
       <span>Starring : {{show.cast.slice(0,3)}}</span>
       <br/>
       <span>Genres : {{ show.genres}} </span>
@@ -34,15 +42,8 @@
 
   </div>
   <br/>
-  <div>
-        <!-- event binding of (change) event to event handler -->
-           <select class="box"(change)="selectChangeHandler($event)">
-          <!--binding value property of option element to the season id-->
-             <option>Select Season</option>
-             <option  *ngFor="let season of show.seasons;index as i" [value]='season'>Season {{ i+1 }}</option>
-           </select>
-          </div>
-    <br/> 
+
+    <br/>
 
     <!--Some shows have seasons but no episode list. The following line displays the episdoe deatils only if episodeList is available,else says "Episode List not available" -->
           <div *ngIf="episodeList?.length ==0 && selectedSeasonID" >
@@ -53,7 +54,7 @@
       <div class="container">
       <section class="row">
         <div class="col-lg-5">
-        <img height="250" width="400" [src]='episode.image'>
+        <img height="250" width="400" [src]='episode.image' class="img-thumbnail">
         </div>
           <section class="col-lg-7">
           <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
@@ -63,7 +64,7 @@
         </div>
         </div>
       </div>
-      
-     
+
+
 
 

@@ -21,6 +21,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { GenreComponent } from './genre/genre.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatButtonModule } from '@angular/material/button';
+import { SeasonsComponent } from './seasons/seasons.component';
+
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
@@ -31,7 +33,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     TruncateTextPipe,
     TvShowListComponent,
     SearchComponent,
-    GenreComponent
+    GenreComponent,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule,

@@ -10,30 +10,37 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class SearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
-  search=new FormControl('', [Validators.minLength(3)]);
-  constructor() { }
+  // search=new FormControl('', [Validators.minLength(3)]);
+  constructor(private tvshowService: TvshowService) { }
+   result;
+   search: string;
 
   ngOnInit(): void {
-    this.search.valueChanges
-       .pipe(debounceTime(1000))
-       .subscribe((searchValue: string) => {
-      if (!this.search.invalid) {
-        this.searchEvent.emit(searchValue);
-      }
-    })
-}
+//     this.search.valueChanges
+//        .pipe(debounceTime(1000))
+//        .subscribe((searchValue: string) => {
+//       if (!this.search.invalid) {
+//         this.searchEvent.emit(searchValue);
+//       }
+//     })
+// }
 
-}
+// }
+
+// this.search.valueChanges
+//       .subscribe((searchValue: string) => {
+//         if (searchValue){
+//           const userInput = searchValue;
+//           this.tvshowService.getTvShowSearch(userInput).subscribe(data => this.result=data);
+//             }
+//       })
+
+//     }
+//   }
 
 
-      /*.subscribe((searchValue: string) => {
-        if (searchValue){
-          const userInput = searchValue;
-          this.tvshowService.getTvShowSearch(userInput).subscribe(data => console.log(data));
-            }
-      })*/
+// this.search.valueChanges.subscribe((searchValue: string) => this.tvshowService.getTvShowSearch(searchValue).subscribe((data) =>this.result=data))
+    
+//   }
 
-
-
-
-
+}}

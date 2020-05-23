@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TvShowComponent } from './tv-show/tv-show.component';
 import { MainPageComponent } from './main-page/main-page.component'
 import { GenreComponent } from './genre/genre.component';
+import { SeasonsComponent } from './seasons/seasons.component';
 //import all the components used for routing
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   component: TvShowComponent
 },
 {
-  
+
   path:'',
   //empty path should route to main-page component
   component: MainPageComponent
@@ -22,7 +23,13 @@ const routes: Routes = [
   path: 'genre/:term',
   //this path should route to genre component
   component: GenreComponent
+},
+{
+  path: 'seasons/:id',
+
+  component: SeasonsComponent
 }
+
 ];
 
 @NgModule({

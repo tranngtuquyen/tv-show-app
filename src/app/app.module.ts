@@ -21,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { GenreComponent } from './genre/genre.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatButtonModule } from '@angular/material/button';
+import { SeasonsComponent } from './seasons/seasons.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
     TruncateTextPipe,
     TvShowListComponent,
     SearchComponent,
-    GenreComponent
+    GenreComponent,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule,

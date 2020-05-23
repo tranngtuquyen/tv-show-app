@@ -2,16 +2,12 @@
   display: flex;
   overflow-x: auto;
 }
-
 .show-list-section img {
   margin-right:15px;
 }
-
 .show-list-section::-webkit-scrollbar {
   display: none;
 }
-
-
  #myIcon:hover{
    box-shadow: 0 2px 5px 2px #cccccc;
  }

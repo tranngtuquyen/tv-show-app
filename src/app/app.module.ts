@@ -23,6 +23,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { MatButtonModule } from '@angular/material/button';
 import { SeasonsComponent } from './seasons/seasons.component';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SeasonsComponent } from './seasons/seasons.component';
     MatInputModule,
     MatMenuModule,
     OverlayModule,
-    MatButtonModule
+    MatButtonModule,
+    SlickCarouselModule
   ],
   providers: [TvshowService],
   bootstrap: [AppComponent]

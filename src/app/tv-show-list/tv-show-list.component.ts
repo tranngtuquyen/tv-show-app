@@ -9,6 +9,7 @@ import { IShow } from '../ishow';
 export class TvShowListComponent implements OnInit {
   slideConfig;
   @Input() showList: IShow[];
+  
 
   constructor() { }
 

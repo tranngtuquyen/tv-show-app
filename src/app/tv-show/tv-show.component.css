@@ -14,18 +14,16 @@
     font-size: 20px;
     color: white;
   }
-  .content{
+  /* .content{
     float: right;
     width: 700px;
-  }
+  } */
   #desc{
-
     font-size: 30px ;
     color: #AAA7A7;
     text-align: left;
     font-family:Microsoft sans-serif;
     margin: 5px;
-
   }
   .details{
     color: #B1AEAE;

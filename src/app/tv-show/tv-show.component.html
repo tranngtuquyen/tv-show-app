@@ -1,18 +1,16 @@
 <div style="margin: 15px">
-  <div class =name >{{ show.name }} </div>
-  <div class= p >
+  <div class = "name">{{ show.name }}</div>
+  <div class= p>
      <span> {{  show.year.substr(0,4) }}</span>
      <label>&nbsp; &nbsp; &nbsp;
       <span> {{ show.language }}</span>
     </label>
-
-
  <span>
       <!-- event binding of (change) event to event handler -->
          <select class="box" (change)="selectChangeHandler($event)">
         <!--binding value property of option element to the season id-->
            <option >Select Season</option>
-           <option *ngFor="let season of show.seasons;index as i" [value]='season'>Season {{ i+1 }}</option>
+           <option *ngFor="let season of show.seasons;index as i" [value] ='season'>Season {{ i+1 }}</option>
          </select>
 
       </span>
@@ -22,11 +20,11 @@
     <div fxFlex></div>
     <div id="desc" fxFlex="60%">
       <div fxFlex="90%">
-        <span  [innerHtml]=" show.description " ></span>
+        <span  [innerHtml]="show.description"></span>
       </div>
     </div>
 
-    <div class= content fxFlex="40%">
+    <div class= "content" fxFlex="40%">
       <img [src]="show.image"  class="img-thumbnail" style="width: 300px"/>
     </div>
   </div>
@@ -42,9 +40,8 @@
 
   </div>
   <br/>
-
     <br/>
-
+  </div>
     <!--Some shows have seasons but no episode list. The following line displays the episdoe deatils only if episodeList is available,else says "Episode List not available" 
           <div *ngIf="episodeList?.length ==0 && selectedSeasonID" >
             <p class="check">Episode List for this season is not available.</p>
@@ -63,7 +60,7 @@
       </section>
         </div>
         </div> -->
-      </div>
+      
 
 
 

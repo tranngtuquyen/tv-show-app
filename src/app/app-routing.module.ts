@@ -4,6 +4,7 @@ import { TvShowComponent } from './tv-show/tv-show.component';
 import { MainPageComponent } from './main-page/main-page.component'
 import { GenreComponent } from './genre/genre.component';
 import { SeasonsComponent } from './seasons/seasons.component';
+
 //import all the components used for routing
 
 const routes: Routes = [

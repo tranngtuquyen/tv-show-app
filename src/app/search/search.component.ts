@@ -1,4 +1,4 @@
-import { Component,Output,EventEmitter,OnInit } from '@angular/core';
+import { Component,Output,EventEmitter,OnInit, Input } from '@angular/core';
 import { FormControl,Validators } from '@angular/forms';
 import { TvshowService } from '../tvshow.service';
 import { debounceTime } from 'rxjs/operators';
@@ -9,13 +9,14 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+ 
   @Output() searchEvent = new EventEmitter<string>();
-  // search=new FormControl('', [Validators.minLength(3)]);
+  search=new FormControl('', [Validators.minLength(3)]);
   constructor(private tvshowService: TvshowService) { }
-   result;
-   search: string;
-
   ngOnInit(): void {
+  
+
+
 //     this.search.valueChanges
 //        .pipe(debounceTime(1000))
 //        .subscribe((searchValue: string) => {
@@ -38,9 +39,10 @@ export class SearchComponent implements OnInit {
 //     }
 //   }
 
-
+  
 // this.search.valueChanges.subscribe((searchValue: string) => this.tvshowService.getTvShowSearch(searchValue).subscribe((data) =>this.result=data))
     
 //   }
-
-}}
+}
+  
+}

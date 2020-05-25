@@ -3,7 +3,7 @@
 /* You can add global styles to this file, and also import other style files*/
 body{
   background-color: black;
-
+  overflow-x:hidden;/* remove horizontal scroll bar in responsive view*/
 }
 
 

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
+import { TvshowService } from '../tvshow.service';
+import { TvshowServiceFake } from '../tvshow.service.fake';
+
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -8,7 +11,11 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
+      declarations: [ SearchComponent ],
+      providers: [
+        {provide: TvshowService, useClass:
+        TvshowServiceFake}
+      ]
     })
     .compileComponents();
   }));

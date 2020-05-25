@@ -3,7 +3,7 @@
   <span><a routerLink=""><img  src="./assets/logo.png"  style="width:150px;"></a></span>
 
   <!--Home button routing to main page-->
-
+  <div fxShow="true" fxHide.lt-sm="true"> <!--Hides these buttons in responsive view, only search bar is seen-->
   <button class="dropdown-button first" routerLink ="">Home</button>
 
 `
@@ -23,6 +23,7 @@
   -->
 
   <!--Using dropdown from angular/material-->
+ 
   <button class="dropdown-button" [matMenuTriggerFor]="shows">TvShows</button>
   <mat-menu #shows="matMenu">
     <span mat-menu-item *ngFor="let genre of genres" routerLink="/genre/{{genre | lowercase}}"
@@ -30,13 +31,17 @@
   </mat-menu>
 
 
+
   <span class="icons"><a >Movies</a></span>
   <span class="icons"><a >My List</a></span>
-  <span class="icons"><a >Latest</a></span>
+  <span class="icons"><a >Latest</a></span></div>
   <span class="searchclass">
-    <app-search (searchEvent)="doSearch($event)"> </app-search></span>
+ <app-search (searchEvent)="doSearch($event)"> </app-search>
+  </span>
+    <div fxShow="true" fxHide.lt-sm="true">
   <span class="icons"><a >Kids</a></span>
-  <span class="icons"><a >DVD</a></span>
+  <span class="icons"><a >DVD</a></span></div>
+  
   </mat-toolbar-row>
   </mat-toolbar>
 

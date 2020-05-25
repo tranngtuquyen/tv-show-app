@@ -10,6 +10,7 @@ export class TvShowListComponent implements OnInit {
   slideConfig;
   @Input() showList: IShow[];
 
+
   constructor() { }
 
   @HostListener('window:resize', ['$event'])

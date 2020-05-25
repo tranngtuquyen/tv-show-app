@@ -15,24 +15,22 @@ export class TvShowComponent implements OnInit {
   id: number;
   selectedSeasonID:number;
   
-constructor (private route: ActivatedRoute,                                private tvshowservice:TvshowService,
+constructor (private route: ActivatedRoute, private tvshowservice:TvshowService,
  private router: Router) {
-    this.route.params.subscribe(params => this.id =params.id);
-
+      this.route.params.subscribe(params => this.id =params.id);
 }
-  
-
-
-  // route is the variable used from our component routing which will get the id from the url path.
+// route is the variable used from our component routing which will get the id from the url path.
   ngOnInit(): void {
-    this.tvshowservice.getTvShow(this.id).subscribe((data) => (this.show = data));
+          this.tvshowservice.getTvShow(this.id).subscribe((data) => (this.show = data));
+
         //this.getEpisodeList(this.id)
   }
 // instead of hardcoding id ,now we got id from the route url
 //Event handler function to handle the option change in dropdown.The [value] property stores the value(here the season id)of the option the user selected.
 selectChangeHandler(event: any){
-      this.selectedSeasonID = event.target.value;
-      this.router.navigate(['/seasons',this.selectedSeasonID],);
+      this.selectedSeasonID = event.target.value;
+      this.router.navigate(['/seasons',this.selectedSeasonID]);
+      console.log(this.show.name)
       //this.getEpisodeList(this.selectedSeasonID)
     }
     /*getEpisodeList(id) {

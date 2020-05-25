@@ -86,6 +86,13 @@ export class TvshowServiceFake implements Ishowservice{
     return of(this.fakeEpisodeList);
   }
 
+  public getShowByGenre(showList: IShow[],genre: string) :  Observable<IShow[]>{
+    return of(this.fakeShowList);
+  }
+  public getShowByRating(showList: IShow[], minRating: number):
+    Observable<IShow[]>{
+      return of(this.fakeShowList);
+  }
 }
 
 

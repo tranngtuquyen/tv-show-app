@@ -26,7 +26,9 @@ export class GenreComponent implements OnInit {
   getShowByGenre() {
     let term = this.route.snapshot.paramMap.get("term");
     this.genre = term.slice(0,1).toUpperCase() + term.slice(1);
+
     this.showService.getAllShows().subscribe(data => this.showsByGenre = this.showService.getShowByGenre(data, this.genre));
+    
   }
 
 }

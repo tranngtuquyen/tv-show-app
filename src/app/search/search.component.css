@@ -1,4 +1,9 @@
 .f{
   color:white;
-
+ 
+}
+/*width of search bar*/
+.form-control{
+  width:250px;
+    
 }

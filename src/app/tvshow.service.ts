@@ -106,7 +106,8 @@ export class TvshowService implements Ishowservice{
   getIEpisodeList(seasonId: number) {
     const url = `http://api.tvmaze.com/seasons/${seasonId}/episodes`;
     return this.httpclient.get<IEpisodeData[]>(url)
-    .pipe(map(data => this.transfromToIEpisodeList(data)))
+    // .pipe(map(data => this.transfromToIEpisodeList(data)))
+    .pipe(map(data => data.map(d => this.transformToIEpisode(d))))
   }
 
   transformToIEpisode(data: IEpisodeData) : IEpisode {
@@ -116,12 +117,11 @@ export class TvshowService implements Ishowservice{
       season: data.season,
       episode: data.number,
       image: data.image? data.image.medium: '',
-      description: data.summary
-    });
+      description: data.summary? data.summary:'' });
   }
-  transfromToIEpisodeList(data: IEpisodeData[]): IEpisode[] {
-    return data.map(d => this.transformToIEpisode(d));
-  }
+  // transfromToIEpisodeList(data: IEpisodeData[]): IEpisode[] {
+  //   return data.map(d => this.transformToIEpisode(d));
+  // }
 
   getAllShows() {
     const url = `http://api.tvmaze.com/shows`;

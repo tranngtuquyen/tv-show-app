@@ -25,6 +25,8 @@ import { SeasonsComponent } from './seasons/seasons.component';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     SearchComponent,
     GenreComponent,
     SeasonsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MatMenuModule,
     OverlayModule,
     MatButtonModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+   
   ],
   providers: [TvshowService],
   bootstrap: [AppComponent]

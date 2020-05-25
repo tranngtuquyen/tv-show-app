@@ -14,18 +14,16 @@
     font-size: 20px;
     color: white;
   }
-  .content{
+  /* .content{
     float: right;
     width: 700px;
-  }
+  } */
   #desc{
-
     font-size: 30px ;
     color: #AAA7A7;
     text-align: left;
     font-family:Microsoft sans-serif;
     margin: 5px;
-
   }
   .details{
     color: #B1AEAE;
@@ -81,27 +79,4 @@
       width: 300px;
     } */
 
-    .col-lg-5{
-      margin-bottom: 30px;
-    }
-
-    p{
-      font-size: 20px;
-      color:grey;
-      text-align: left;
-      font-family:Microsoft sans-serif;
-      margin-top: -40px;
-    }
-    @media (max-width: 1200px) {
-      .col-lg-7{
-        text-align:center;
-      }
-     section img{
-
-       display: block;
-       margin-left: auto;
-       margin-right: auto;
-       width: 350px;
-     }
-
-    }
+    

@@ -78,7 +78,7 @@ export class TvshowService implements Ishowservice{
     id: data.id,
     name: data.name,
     description: data.summary,
-    image: data.image.medium,
+    image: data.image?data.image.medium: '',
     rating: data.rating ? data.rating.average : null,
     language: data.language,
     genres: data.genres,
@@ -109,6 +109,12 @@ export class TvshowService implements Ishowservice{
     // .pipe(map(data => this.transfromToIEpisodeList(data)))
     .pipe(map(data => data.map(d => this.transformToIEpisode(d))))
   }
+  onSearch(searchWord){
+    console.log(searchWord);
+    return this.httpclient.get<IShowData>(
+    `http://api.tvmaze.com/singlesearch/shows?q=`+searchWord
+  )
+  }
 
   transformToIEpisode(data: IEpisodeData) : IEpisode {
     return ({
@@ -117,7 +123,7 @@ export class TvshowService implements Ishowservice{
       season: data.season,
       episode: data.number,
       image: data.image? data.image.medium: '',
-      description: data.summary? data.summary:'' });
+      description: data.summary? data.summary:''    });
   }
   // transfromToIEpisodeList(data: IEpisodeData[]): IEpisode[] {
   //   return data.map(d => this.transformToIEpisode(d));
@@ -136,6 +142,8 @@ export class TvshowService implements Ishowservice{
   getShowByRating(showList: IShow[], minRating: number) {
     return showList.filter(show => show.rating > minRating);
   }
+
+ 
 }
 
 

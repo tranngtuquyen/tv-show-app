@@ -54,18 +54,18 @@ export class TvshowService implements Ishowservice{
 
   constructor(private httpclient: HttpClient) { }
 
-  getTvShowSearch(search : number|string) {
-    let uriParams = '';
-    if (typeof search === 'string'){
-      uriParams = `q=${search}`
-    } else {
-      uriParams =`${search}`
-    }
-    return this.httpclient.get<IShowData>(
-      `${environment.baseUrl}api.tvmaze.com/shows/${uriParams}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.
-        transformToIShows(data))
-      )
-    }
+  // getTvShowSearch(search : number|string) {
+  //   let uriParams = '';
+  //   if (typeof search === 'string'){
+  //     uriParams = `q=${search}`
+  //   } else {
+  //     uriParams =`${search}`
+  //   }
+  //   return this.httpclient.get<IShowData>(
+  //     `${environment.baseUrl}api.tvmaze.com/shows/${uriParams}?embed[]=seasons&embed[]=cast`).pipe(map(data=> this.
+  //       transformToIShows(data))
+  //     )
+  //   }
 
     getTvShow(id : number) {
       return this.httpclient.get<IShowData>(
@@ -109,12 +109,7 @@ export class TvshowService implements Ishowservice{
     // .pipe(map(data => this.transfromToIEpisodeList(data)))
     .pipe(map(data => data.map(d => this.transformToIEpisode(d))))
   }
-  onSearch(searchWord){
-    console.log(searchWord);
-    return this.httpclient.get<IShowData>(
-    `http://api.tvmaze.com/singlesearch/shows?q=`+searchWord
-  )
-  }
+
 
   transformToIEpisode(data: IEpisodeData) : IEpisode {
     return ({
@@ -122,8 +117,8 @@ export class TvshowService implements Ishowservice{
       name: data.name,
       season: data.season,
       episode: data.number,
-      image: data.image? data.image.medium: '',
-      description: data.summary? data.summary:''    });
+      image: data.image? data.image.medium: 'Not available',
+      description: data.summary? data.summary:'       Summary not available'    });
   }
   // transfromToIEpisodeList(data: IEpisodeData[]): IEpisode[] {
   //   return data.map(d => this.transformToIEpisode(d));
@@ -142,7 +137,12 @@ export class TvshowService implements Ishowservice{
   getShowByRating(showList: IShow[], minRating: number) {
     return showList.filter(show => show.rating > minRating);
   }
-
+  
+  onSearch(searchWord: string){
+    return this.httpclient.get<IShowData>(
+   `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${searchWord}`).pipe(map(data=> this.transformToIShows(data)))
+ 
+ }
  
 }
 

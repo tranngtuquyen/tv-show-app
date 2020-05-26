@@ -9,17 +9,17 @@ import { TvshowService } from '../tvshow.service';
   styleUrls: ['./search-details.component.css']
 })
 export class SearchDetailsComponent implements OnInit {
-  show;
+  show: IShow;
   searchWord: string;
   constructor (private route: ActivatedRoute, private tvshowservice:TvshowService
    ) {
-    this.route.params.subscribe(params => this.searchWord =params.searchWord);
+    this.route.params.subscribe(params => {this.searchWord =params.searchWord;
+    this.tvshowservice.onSearch(this.searchWord).subscribe(data => this.show=data);
+    })
    }
 
   ngOnInit(): void {
-    this.tvshowservice.onSearch(this.searchWord).subscribe(data => this.show=data);
-    console.log(this.show);
-    console.log(this.searchWord);
+ 
   }
 
 }

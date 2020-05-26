@@ -14,27 +14,26 @@ export class SearchComponent implements OnInit {
  
  searchWord:string;
 
-  @Output() searchEvent = new EventEmitter<string>();
+  // @Output() searchEvent = new EventEmitter<string>();
   search=new FormControl('', [Validators.minLength(3)]);
 
   constructor(private tvshowService: TvshowService, private route: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {
+    this.search.valueChanges
+       .pipe(debounceTime(800))
+       .subscribe((searchWord: string) => {
+      if (!this.search.invalid) {
+        this.router.navigate(['/info',searchWord]);
+        searchWord='';
+      } 
+    // onKey(event: any){
+    //   this.searchWord=event.target.value;
+    //   this.router.navigate(['/info',this.searchWord]);
+    //   console.log(this.searchWord);
+    // }
+    })
   }
-    onKey(event: any){
-      this.searchWord=event.target.value;
-      this.router.navigate(['/info',this.searchWord]);
-      console.log(this.searchWord);
-    }
-  }
-
-//     this.search.valueChanges
-//        .pipe(debounceTime(1000))
-//        .subscribe((searchValue: string) => {
-//       if (!this.search.invalid) {
-//         this.searchEvent.emit(searchValue);
-//       }
-//     })
-// }
+}
 
 // }
 

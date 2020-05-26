@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SeasonsComponent } from './seasons/seasons.component';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SearchDetailsComponent } from './search-details/search-details.component';
 
 
 
@@ -36,7 +37,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     TvShowListComponent,
     SearchComponent,
     GenreComponent,
-    SeasonsComponent
+    SeasonsComponent,
+    SearchDetailsComponent
 
   ],
   imports: [

@@ -4,6 +4,9 @@
 }
 /*width of search bar*/
 .form-control{
-  width:250px;
+  width:280px;
     
+}
+.mat-error{
+color: white;
 }

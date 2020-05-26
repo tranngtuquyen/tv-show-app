@@ -13,17 +13,15 @@ export class AppComponent {
     'Action','Anime','Comedy','Crime','Drama','Family','Fantasy','Horror','Mystery','Romance','Supernatural','Thriller'
   ];
 
-
-  
   tvshow: IShow;
   constructor(private tvshowService: TvshowService){}
 
-  doSearch(searchValue){
-    const userInput = searchValue;
-    this.tvshowService.getTvShowSearch(
-            userInput[0])
-            .subscribe(data => this.tvshow = data);
-            console.log(this.tvshow);
-  }
+  // doSearch(searchValue){
+  //   const userInput = searchValue;
+  //   this.tvshowService.getTvShowSearch(
+  //           userInput[0])
+  //           .subscribe(data => this.tvshow = data);
+  //           console.log(this.tvshow);
+  // }
 
 }

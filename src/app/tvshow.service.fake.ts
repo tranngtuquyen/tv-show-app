@@ -69,10 +69,10 @@ export class TvshowServiceFake implements Ishowservice{
     }
   ];
 
-   public getTvShowSearch(search : number|string):
-     Observable<IShow>{
-        return of(this.fakeService);
-    }
+  //  public getTvShowSearch(search : number|string):
+  //    Observable<IShow>{
+  //       return of(this.fakeService);
+  //   }
     public getTvShow(id : number):
      Observable<IShow>{
         return of(this.fakeService);
@@ -93,7 +93,13 @@ export class TvshowServiceFake implements Ishowservice{
     Observable<IShow[]>{
       return of(this.fakeShowList);
   }
-}
+
+  public onSearch(searchWord: string) : Observable<IShow>{
+    return of(this.fakeService);
+  }
+
+ }
+
 
 
 

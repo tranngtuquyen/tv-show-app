@@ -4,9 +4,9 @@
     <div *ngFor="let show of showsByGenre" class="showList">
       <div fxFlex.lt-md="20%" fxFlex.lt-sm="100%">
         <a routerLink="/details/{{show.id}}">
-          <div>
+          
             <img [src]= 'show.image'>
-          </div>
+          
         </a>
       </div>
     </div>

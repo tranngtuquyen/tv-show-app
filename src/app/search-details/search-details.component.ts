@@ -17,9 +17,8 @@ export class SearchDetailsComponent implements OnInit {
     this.tvshowservice.onSearch(this.searchWord).subscribe(data => this.show=data);
     })
    }
-
   ngOnInit(): void {
- 
+    
   }
 
 }

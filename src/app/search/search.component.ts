@@ -17,22 +17,22 @@ export class SearchComponent implements OnInit {
   // @Output() searchEvent = new EventEmitter<string>();
   search=new FormControl('', [Validators.minLength(3)]);
 
-  constructor(private tvshowService: TvshowService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private tvshowService: TvshowService, private route: ActivatedRoute, private router: Router) {
+    
+   }
   ngOnInit(): void {
     this.search.valueChanges
        .pipe(debounceTime(800))
        .subscribe((searchWord: string) => {
       if (!this.search.invalid) {
-        this.router.navigate(['/info',searchWord]);
-        searchWord='';
-      } 
-    // onKey(event: any){
-    //   this.searchWord=event.target.value;
-    //   this.router.navigate(['/info',this.searchWord]);
-    //   console.log(this.searchWord);
-    // }
-    })
+       this.router.navigate(['/info',searchWord]);
+      }    })
   }
+
+  onKey(event: any){
+      event.target.value=''; //clears the input field when the search bar loses focus.
+      // this.router.navigate(['/info',this.searchWord]); 
+    }
 }
 
 // }

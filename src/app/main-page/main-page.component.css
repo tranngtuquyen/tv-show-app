@@ -1,16 +1,3 @@
-
-/* Old code
-.show-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin-left: 35px;
-  margin-top: 60px;
-}
-.show-image {
-  flex: 20%;
-  margin-bottom: 20px;
-}*/
 .section-title {
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

@@ -1,17 +1,8 @@
-/* .s{
-  color:white;
-} */
-/* .container::-webkit-scrollbar {
-  display: none;
-} */
-
 #episode{
   font-size: 20px;
   color: white;
   text-align: left;
   font-family:Microsoft sans-serif;
-
-
 }
 
 #epicontent{
@@ -19,7 +10,6 @@
   color:grey;
   text-align: left;
   font-family:Microsoft sans-serif;
-
 }
 
 .col-lg-5{
@@ -31,7 +21,6 @@ p{
   color:grey;
   text-align: left;
   font-family:Microsoft sans-serif;
-  /* margin-top: -40px; */
   margin-top: 20px;
   margin-left: 20px;
 
@@ -41,11 +30,9 @@ p{
     text-align:center;
   }
  section img{
-
    display: block;
    margin-left: auto;
    margin-right: auto;
-   /* width: 350px; */
  }
 
 }
@@ -58,5 +45,5 @@ button {
   color:white;
   margin-left: 200px;
   border-color: transparent;
-  border-radius: 8px;  
+  border-radius: 8px;
 }

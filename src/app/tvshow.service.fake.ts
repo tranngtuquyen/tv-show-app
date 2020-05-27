@@ -69,10 +69,7 @@ export class TvshowServiceFake implements Ishowservice{
     }
   ];
 
-  //  public getTvShowSearch(search : number|string):
-  //    Observable<IShow>{
-  //       return of(this.fakeService);
-  //   }
+ 
     public getTvShow(id : number):
      Observable<IShow>{
         return of(this.fakeService);

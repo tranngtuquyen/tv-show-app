@@ -1,6 +1,3 @@
-  /* .nav-bar{
-    margin-bottom: 20px;
-  } */
   .name{
     text-orientation: initial;
     font-weight:bold;
@@ -14,10 +11,7 @@
     font-size: 20px;
     color: white;
   }
-  /* .content{
-    float: right;
-    width: 700px;
-  } */
+
   #desc{
     font-size: 30px ;
     color: #AAA7A7;
@@ -28,10 +22,8 @@
   .details{
     color: #B1AEAE;
     font-size: 20px ;
-
   }
   .box {
-    /* width: 120px; */
     width: 138px;
     height: 30px;
     border: white 1px solid;
@@ -40,43 +32,8 @@
     background-color: black;
     border-radius: 5px;
     margin-left:-45px;
-
   }
 
-    /* .container {
-      display: flex;
-      overflow-x: auto;
-    } */
-    /* .container img {
-      margin-right: 30px;
-      } */
-    .container::-webkit-scrollbar {
-         display: none;
-    }
-
-    body {
-      display: flex;
-      align-items: center;
-      height: 100vh;
-    }
-    #episode{
-      font-size: 20px;
-      color: white;
-      text-align: left;
-      font-family:Microsoft sans-serif;
 
 
-    }
 
-    #epicontent{
-      font-size: 20px ;
-      color:grey;
-      text-align: left;
-      font-family:Microsoft sans-serif;
-
-    }
-    /* .episode-content {
-      width: 300px;
-    } */
-
-    

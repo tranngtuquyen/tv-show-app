@@ -1,7 +1,6 @@
 .searchclass{
   text-align: right;
   flex: 1 1 auto;
- 
 }
 
 .icons{
@@ -10,6 +9,7 @@
   margin-right: 15px;
   font-size: 15px;
 }
+
 .dropdown-button {
   background-color: black;
   border-color: transparent;
@@ -33,10 +33,6 @@
   background-color: #E50914;
 }
 
-a{
-  text-decoration: none;
-color: white;
-}
 .first{
   margin-left: 15px;
 }

@@ -22,7 +22,6 @@ import { GenreComponent } from './genre/genre.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatButtonModule } from '@angular/material/button';
 import { SeasonsComponent } from './seasons/seasons.component';
-
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SearchDetailsComponent } from './search-details/search-details.component';
 
@@ -58,7 +57,7 @@ import { SearchDetailsComponent } from './search-details/search-details.componen
     OverlayModule,
     MatButtonModule,
     SlickCarouselModule,
-   
+
   ],
   providers: [TvshowService],
   bootstrap: [AppComponent]

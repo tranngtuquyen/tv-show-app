@@ -78,7 +78,7 @@ export class TvshowService implements Ishowservice{
     id: data.id,
     name: data.name,
     description: data.summary,
-    image: data.image?data.image.medium: '',
+    image: data.image?data.image.medium: 'Image not available',
     rating: data.rating ? data.rating.average : null,
     language: data.language,
     genres: data.genres,
@@ -117,8 +117,8 @@ export class TvshowService implements Ishowservice{
       name: data.name,
       season: data.season,
       episode: data.number,
-      image: data.image? data.image.medium: 'Not available',
-      description: data.summary? data.summary:'       Summary not available'    });
+      image: data.image? data.image.medium:'Image not available',
+      description: data.summary? data.summary:'  Summary not available'    });
   }
   // transfromToIEpisodeList(data: IEpisodeData[]): IEpisode[] {
   //   return data.map(d => this.transformToIEpisode(d));

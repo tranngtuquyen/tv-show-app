@@ -12,7 +12,6 @@
            <option >Select Season</option>
            <option *ngFor="let season of show.seasons;index as i" [value] ='season'>Season {{ i+1 }}</option>
          </select>
-
       </span>
   </div>
 <br/>
@@ -28,40 +27,16 @@
       <img [src]="show.image" class="img-thumbnail" style="width: 300px"/>
     </div>
   </div>
-
-
   <div class=details>
-
       <span>Starring : {{show.cast.slice(0,3)}}</span>
       <br/>
       <span>Genres : {{ show.genres}} </span>
       <br/>
       <span>Rating : {{show.rating }}</span>
-
   </div>
   <br/>
     <br/>
   </div>
-    <!--Some shows have seasons but no episode list. The following line displays the episdoe deatils only if episodeList is available,else says "Episode List not available" 
-          <div *ngIf="episodeList?.length ==0 && selectedSeasonID" >
-            <p class="check">Episode List for this season is not available.</p>
-          </div>
-
-      <div  *ngFor="let episode of episodeList">
-      <div class="container">
-      <section class="row">
-        <div class="col-lg-5">
-        <img height="250" width="400" [src]='episode.image' class="img-thumbnail">
-        </div>
-          <section class="col-lg-7">
-          <span id="episode"><b>Episode {{episode.episode}}: {{episode.name}}</b></span>
-          <span id="epicontent" [innerHtml]="episode.description | truncateText: 500"></span></section>
-          <!--TruncateText is a pipe added which will trim our description with 500 letters
-      </section>
-        </div>
-        </div> -->
-      
-
-
+    
 
 

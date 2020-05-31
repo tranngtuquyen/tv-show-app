@@ -16,12 +16,13 @@ export class AppComponent {
   tvshow: IShow;
   constructor(private tvshowService: TvshowService){}
 
-  // doSearch(searchValue){
-  //   const userInput = searchValue;
-  //   this.tvshowService.getTvShowSearch(
-  //           userInput[0])
-  //           .subscribe(data => this.tvshow = data);
-  //           console.log(this.tvshow);
-  // }
+  doSearch(searchValue){
+    const userInput = searchValue;
+    
+    this.tvshowService.onSearch(
+            userInput[0])
+            .subscribe(data => this.tvshow = data);
+
+  }
 
 }

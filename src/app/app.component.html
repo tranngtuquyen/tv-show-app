@@ -9,7 +9,8 @@
   <!--Using dropdown from angular/material-->
   <button class="dropdown-button" [matMenuTriggerFor]="shows">TvShows</button>
   <mat-menu #shows="matMenu">
-    <span mat-menu-item *ngFor="let genre of genres" routerLink="/genre/{{genre | lowercase}}"
+    <span mat-menu-item *ngFor="let genre of genres"
+    routerLink="/genre/{{genre | lowercase}}"
     class="dropdown-item">{{genre}}</span>
   </mat-menu>
 
@@ -20,7 +21,7 @@
   <span class="icons"><a >Latest</a></span>
 </div>
   <span class="searchclass">
-   <app-search></app-search>
+   <app-search (searchEvent)="doSearch($event)"></app-search>
   </span>
   <div fxShow="true" fxHide.lt-md="true">
   <span class="icons"><a >Kids</a></span>
@@ -28,5 +29,5 @@
 </div>
 </mat-toolbar-row>
 </mat-toolbar>
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 

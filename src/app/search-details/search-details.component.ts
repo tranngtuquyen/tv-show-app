@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IShow } from '../ishow';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { TvshowService } from '../tvshow.service';
 
 
@@ -14,10 +14,13 @@ export class SearchDetailsComponent implements OnInit {
   searchWord: string;
   errorMsg: string = "";
 
-  constructor (private route: ActivatedRoute, private tvshowservice:TvshowService) {
+
+  constructor (private route: ActivatedRoute, private tvshowservice:TvshowService)
+   {
     this.route.params.subscribe(params => {this.searchWord =params.searchWord;
+
     this.tvshowservice.onSearch(this.searchWord).
-    //error handling 
+    //error handling
     subscribe(data => {
       this.show= data;
       this.errorMsg="";
@@ -25,13 +28,13 @@ export class SearchDetailsComponent implements OnInit {
       this.show = null;
       this.errorMsg ="No search found";
     });
-   
+
 });
 }
 
-   
+
   ngOnInit(): void {
-    
+
   }
 
 }

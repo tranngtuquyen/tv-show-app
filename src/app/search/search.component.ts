@@ -1,8 +1,6 @@
-import { Component,Output,EventEmitter,OnInit, Input } from '@angular/core';
+import { Component,Output,EventEmitter,OnInit} from '@angular/core';
 import { FormControl,Validators } from '@angular/forms';
-import { TvshowService } from '../tvshow.service';
 import { debounceTime } from 'rxjs/operators';
-import { IShow } from '../ishow';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,20 +10,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
- searchWord:string;
+  @Output() searchEvent =new EventEmitter<string>()
 
   search=new FormControl('', [Validators.minLength(3)]);
 
-  constructor(private tvshowService: TvshowService, private route: ActivatedRoute, private router: Router) {
 
-   }
+  constructor(private router:Router) {}
+
   ngOnInit(): void {
     this.search.valueChanges
        .pipe(debounceTime(800))
        .subscribe((searchWord: string) => {
-      if (!this.search.invalid) {
+      if (searchWord && !this.search.invalid) {
        this.router.navigate(['/info',searchWord]);
-      }    })
+       this.searchEvent.emit(searchWord);
+      }
+    })
   }
 
   onKey(event: any){

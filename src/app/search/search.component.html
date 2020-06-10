@@ -1,0 +1,15 @@
+<form>
+  <mat-form-field class="form-control">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput placeholder="" aria-label="showname" (focusout)="onKey($event)"[formControl]="search">
+    <mat-error *ngIf="search.invalid">
+      Type 3 or more characters to search
+    </mat-error>
+  </mat-form-field>
+</form>
+
+
+
+
+
+

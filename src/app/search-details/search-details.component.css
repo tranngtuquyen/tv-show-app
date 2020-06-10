@@ -1,0 +1,30 @@
+img {
+  width: 250px;
+  margin-left: 15%;
+  margin-top: 50px;
+}
+div img:hover{
+  box-shadow: 1px 1px 5px 1px #cccccc;
+}
+
+/*centers the image in responsive view*/
+@media (max-width: 768px){
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+/*No search found text styling*/
+p{
+  font-size: 20px;
+  color:grey;
+  float: right;
+  font-family:Microsoft sans-serif;
+  margin-top: 10px;
+  margin-right: 18%;
+}
+a{
+  text-decoration: none;
+  color:white;
+}

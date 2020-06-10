@@ -1,28 +1,26 @@
-
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainPageComponent } from './main-page.component';
+import { SearchDetailsComponent } from './search-details.component';
 import { TvshowService } from '../tvshow.service';
 import { TvshowServiceFake } from '../tvshow.service.fake';
 
-describe('MainPageComponent', () => {
-  let component: MainPageComponent;
-  let fixture: ComponentFixture<MainPageComponent>;
+describe('SearchDetailsComponent', () => {
+  let component: SearchDetailsComponent;
+  let fixture: ComponentFixture<SearchDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainPageComponent ],
+      declarations: [ SearchDetailsComponent ],
       providers: [
         {provide: TvshowService, useClass:
         TvshowServiceFake}
       ]
-
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainPageComponent);
+    fixture = TestBed.createComponent(SearchDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

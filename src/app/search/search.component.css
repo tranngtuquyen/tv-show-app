@@ -1,0 +1,8 @@
+/*width of search bar*/
+.form-control{
+  width:280px;
+  border-radius:50px;
+  background-color: #282828;
+  color: white; border-color: transparent;
+}
+

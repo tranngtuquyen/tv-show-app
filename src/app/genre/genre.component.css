@@ -1,0 +1,26 @@
+.showList {
+  margin-bottom: 20px;
+}
+.section-title {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-bottom:10px;
+}
+div img{
+  width:auto;
+  height:auto;
+}
+div img:hover{
+  box-shadow: 1px 1px 5px 1px #cccccc;
+}
+
+/*centres the image in responsive view*/
+@media (max-width: 768px){
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+   }
+}

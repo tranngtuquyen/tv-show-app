@@ -69,11 +69,12 @@ export class TvshowServiceFake implements Ishowservice{
     }
   ];
 
-   public getTvShow(id : number):
+ 
+    public getTvShow(id : number):
      Observable<IShow>{
         return of(this.fakeService);
     }
-  
+
   public getAllShows():  Observable<IShow[]> {
     return of(this.fakeShowList);
   }
@@ -82,7 +83,20 @@ export class TvshowServiceFake implements Ishowservice{
     return of(this.fakeEpisodeList);
   }
 
-}
+  public getShowByGenre(showList: IShow[],genre: string) :  Observable<IShow[]>{
+    return of(this.fakeShowList);
+  }
+  public getShowByRating(showList: IShow[], minRating: number):
+    Observable<IShow[]>{
+      return of(this.fakeShowList);
+  }
+
+  public onSearch(searchWord: string) : Observable<IShow>{
+    return of(this.fakeService);
+  }
+
+ }
+
 
 
 

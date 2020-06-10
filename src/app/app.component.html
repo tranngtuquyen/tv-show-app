@@ -1,17 +1,33 @@
-<div style="text-align:center">
-  <h1>
-    <div>
-      <a class ="title" routerLink="">
-    Netflix
-    </a>
-    </div>
-  </h1>
+<mat-toolbar>
+  <mat-toolbar-row>
+  <span><a routerLink=""><img  src="./assets/logo.png"  style="width:150px;"></a></span>
+
+  <!--Home button routing to main page-->
+  <div fxShow="true" fxHide.lt-sm="true">
+  <!--Hides these buttons in responsive view, only search bar is seen-->
+  <button class="dropdown-button first" routerLink ="">Home</button>
+  <!--Using dropdown from angular/material-->
+  <button class="dropdown-button" [matMenuTriggerFor]="shows">TvShows</button>
+  <mat-menu #shows="matMenu">
+    <span mat-menu-item *ngFor="let genre of genres"
+    routerLink="/genre/{{genre | lowercase}}"
+    class="dropdown-item">{{genre}}</span>
+  </mat-menu>
+
   </div>
-  <!--old code
-    <app-tv-show></app-tv-show>
-  <app-main-page></app-main-page>-->
-
-  <!--App component always displays in the browser with the title as Netflix , other components are loaded based on the route i.e path we described in the app.routing.module.-->
-  <router-outlet></router-outlet>
-
+  <div fxShow="true" fxHide.lt-md="true">
+  <span class="icons"><a >Movies</a></span>
+  <span class="icons"><a >My List</a></span>
+  <span class="icons"><a >Latest</a></span>
+</div>
+  <span class="searchclass">
+   <app-search ></app-search>
+  </span>
+  <div fxShow="true" fxHide.lt-md="true">
+  <span class="icons"><a >Kids</a></span>
+  <span class="icons"><a >DVD</a></span>
+</div>
+</mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
 

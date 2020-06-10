@@ -1,0 +1,38 @@
+.searchclass{
+  text-align: right;
+  flex: 1 1 auto;
+}
+
+.icons{
+  color:white;
+  margin-left:15px;
+  margin-right: 15px;
+  font-size: 15px;
+}
+
+.dropdown-button {
+  background-color: black;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+
+}
+.dropdown-button:hover, .dropdown-button:focus,.dropdown-button:focus-within{
+  color: white;
+  background-color: #E50914;
+  border-color: #E50914;
+  border-radius: 5px;
+}
+.dropdown-item {
+  color:white;
+  background-color:black;
+  line-height: 20px;
+  height: auto;
+}
+.dropdown-item:hover {
+  background-color: #E50914;
+}
+
+.first{
+  margin-left: 15px;
+}

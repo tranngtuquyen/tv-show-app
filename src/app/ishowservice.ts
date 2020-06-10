@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { IShow, IEpisode } from './ishow';
 
 export interface Ishowservice {
+
   getTvShow(id : number):
   Observable<IShow>
 
@@ -11,6 +12,7 @@ export interface Ishowservice {
   getIEpisodeList(seasonId: number) :
   Observable<IEpisode[]>
 
-
+  onSearch(searchWord: string) :
+  Observable<IShow>
 
 }

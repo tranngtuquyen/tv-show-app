@@ -11,8 +11,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TruncateTextPipe } from './truncate-text.pipe';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
+import { SearchComponent } from './search/search.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { GenreComponent } from './genre/genre.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatButtonModule } from '@angular/material/button';
+import { SeasonsComponent } from './seasons/seasons.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SearchDetailsComponent } from './search-details/search-details.component';
+
 
 
 @NgModule({
@@ -21,7 +33,12 @@ import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
     TvShowComponent,
     MainPageComponent,
     TruncateTextPipe,
-    TvShowListComponent
+    TvShowListComponent,
+    SearchComponent,
+    GenreComponent,
+    SeasonsComponent,
+    SearchDetailsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +49,15 @@ import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
     FlexLayoutModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
+    OverlayModule,
+    MatButtonModule,
+    SlickCarouselModule,
+
   ],
   providers: [TvshowService],
   bootstrap: [AppComponent]

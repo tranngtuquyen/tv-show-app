@@ -1,0 +1,10 @@
+<div *ngIf="show">
+<a routerLink="/details/{{show.id}}">
+<img [src]= 'show.image' alt="Image not available.Click here for details">
+</a>
+</div>
+<p *ngIf="errorMsg">{{errorMsg}}</p>
+
+
+
+

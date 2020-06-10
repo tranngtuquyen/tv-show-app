@@ -1,0 +1,12 @@
+<div class= "container-fluid" *ngIf="showsByGenre">
+  <div class="section-title">{{genre}}</div>
+  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <div *ngFor="let show of showsByGenre" class="showList">
+      <div fxFlex.lt-md="20%" fxFlex.lt-sm="100%">
+        <a routerLink="/details/{{show.id}}">
+            <img [src]= 'show.image'>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

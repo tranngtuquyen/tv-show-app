@@ -8,11 +8,11 @@ export interface IShow {
     genres: string[];
     seasons: number[];
     cast: string[];
-    // year: Date;
     year: string
     network: string;
     time: string;
     days: string[];
+
 }
 
 export interface IEpisode {
